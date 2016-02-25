@@ -244,7 +244,9 @@ on early-fs
     start oeminfo_nvm
     
 on fs
-    wait /dev/block/platform/hi_mci.0/by-name
+    wait /dev/block/platform/hi_mci.0
+    symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
+
     mount_all /vendor/etc/fstab.hi3650 --early
     
     restorecon /splash2
