@@ -293,7 +293,10 @@
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
     
-        <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
+    <!-- For performance and storage reasons, limit the number of fingerprints per user -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
+    
+    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
          and Strength as defined in Authenticators.java -->
