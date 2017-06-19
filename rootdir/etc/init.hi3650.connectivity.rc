@@ -1,16 +1,18 @@
 on post-fs-data
-    chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
-    
-    mkdir /data/vendor/wifi 0771 wifi wifi
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/sockets 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
+    mkdir /data/vendor/wifi/hostapd/ctrl 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
-    mkdir /data/vendor/log/wifi 0770 wifi system
+    
+    chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
     chown wifi wifi /data/vendor/wpa/wifi/p2p_supplicant.conf
     chmod 0660 /data/vendor/wifi/wpa/p2p_supplicant.conf
-    restorecon_recursive /data/vendor/wifi
-    
+
     mkdir /data/vendor/gnss 0770 system system
     
     mkdir /data/vendor/tombstones 0771 system system
