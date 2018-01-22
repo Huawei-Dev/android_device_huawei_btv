@@ -8,6 +8,7 @@ persist.media.lowlatency.enable=false
 # BT
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 persist.bt.enableAptXHD=true
+ro.rfkilldisabled=1
 
 # CPU
 persist.sys.cpuset.enable=1
