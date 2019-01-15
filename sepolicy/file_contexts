@@ -63,3 +63,6 @@
 /mnvm2:0(/.*)?									u:object_r:system_file:s0
 
 /hw_odm(/.*)?          							u:object_r:rootfs:s0
+
+# Touch
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_8937 u:object_r:hal_lineage_touch_default_exec:s0
