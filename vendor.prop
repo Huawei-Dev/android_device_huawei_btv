@@ -104,7 +104,7 @@ ro.config.hw_sensorhub=true
 
 # wifi
 wifi.interface=wlan0
-wifi.direct.interface=p2p0
+wifi.direct.interface=p2p-dev-wlan0
 
 # Q
 debug.sf.latch_unsignaled = 1
