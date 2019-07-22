@@ -78,6 +78,9 @@ ro.config.hw_sensorhub=true
 wifi.interface=wlan0
 wifi.direct.interface=p2p0
 
+# Q
+debug.sf.enable_gl_backpressure=1
+
 ro.vr_display.service=true
 persist.irqbalance.enable=true
 
