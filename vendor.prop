@@ -40,6 +40,9 @@ drm.service.enabled=true
 ro.media.radar=0
 ro.config.enable_iaware=true
 
+# Fastbootd
+ro.fastbootd.available=true
+
 # Launcher
 lockscreen.rot_override=true
 
