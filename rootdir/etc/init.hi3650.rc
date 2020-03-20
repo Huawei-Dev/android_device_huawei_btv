@@ -247,8 +247,10 @@ on fs
     wait /dev/block/platform/hi_mci.0
     symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
 
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
+
     mount_all /vendor/etc/fstab.hi3650 --early
-    
+
     restorecon /splash2
 
     mkdir /splash2/log 0775 system log
