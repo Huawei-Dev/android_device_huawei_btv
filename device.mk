@@ -219,6 +219,9 @@ PRODUCT_PACKAGES += \
     
 # RRO configurations
 PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    WifiOverlay
     
 # Seccomp policy
 PRODUCT_COPY_FILES += \
