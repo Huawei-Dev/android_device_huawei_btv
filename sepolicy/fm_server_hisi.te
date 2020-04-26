@@ -1,0 +1,6 @@
+# fm_server_hisi daemon
+type fm_server_hisi, domain, domain_deprecated;
+type fm_server_hisi_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(fm_server_hisi)

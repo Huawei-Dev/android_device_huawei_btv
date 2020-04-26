@@ -1,0 +1,5 @@
+libteec.so
+liblog.so
+libwxvoiceembed.so
+libbastetmanager.so
+libVT70.so
