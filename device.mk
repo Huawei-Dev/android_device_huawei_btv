@@ -219,6 +219,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    TetheringConfigOverlay \
     WifiOverlay
     
 # Seccomp policy
