@@ -16,11 +16,6 @@
 #include <sys/sysinfo.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
-
-using android::base::GetProperty;
-using android::init::property_set;
-//using namespace std;
 
 void property_override(char const prop[], char const value[])
 {
