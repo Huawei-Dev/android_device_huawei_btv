@@ -203,6 +203,7 @@ PRODUCT_PACKAGES += \
     init.hwo.sh \
     init.recovery.hi3650.rc \
     init.safailnet.rc \
+    init.services.rc \
     ueventd.hi3650.rc
 
 PRODUCT_COPY_FILES += \
