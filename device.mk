@@ -87,13 +87,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
-# Configstore
+# ConfigStore
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
-    
-# config.fs
-PRODUCT_PACKAGES += \
-    fs_config_files
+    disable_configstore
     
 # DRM
 PRODUCT_PACKAGES += \
