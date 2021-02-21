@@ -1,6 +1,5 @@
 subdirs = [
     "init",
-    "libhidl",
     "libshims",
     "libxcollie",
     "lights",
