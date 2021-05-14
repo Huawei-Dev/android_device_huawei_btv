@@ -265,7 +265,8 @@ PRODUCT_PACKAGES += \
     
 # Vndk
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
+    android.hidl.base@1.0 \
+    android.hidl.base@1.0.vendor
  
 # Vr
 PRODUCT_PACKAGES += \
