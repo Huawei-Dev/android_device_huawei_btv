@@ -20,8 +20,6 @@
 /dev/block/platform/hi_mci.0/by-name/splash2         	/splash2               ext4    rw,nosuid,nodev,noatime,data=ordered 							wait
 /dev/block/platform/hi_mci.0/by-name/secure_storage		/sec_storage           ext4    rw,nosuid,nodev,noatime,data=journal							wait
 
-/dev/block/platform/hi_mci.0/by-name/patch       		/patch_hw     		emmc    defaults                                                 				defaults
-
 /devices/platform/hi_mci.1/mmc_host/mmc1/*            	auto                	auto    defaults                                      					voldmanaged=sdcard:auto,encryptable=userdata
 /devices/platform/ff200000.hisi_usb/ff100000.dwc3/*   	auto          		auto    defaults                								voldmanaged=usbotg:auto
 

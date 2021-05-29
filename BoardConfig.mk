@@ -128,8 +128,7 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	3rdmodemnvmbkp \
 	sec_storage \
 	modem_log \
-	mnvm2:0 \
-	patch_hw
+	mnvm2:0
     
 BOARD_ROOT_EXTRA_SYMLINKS += \
 	/vendor/odm:/odm \

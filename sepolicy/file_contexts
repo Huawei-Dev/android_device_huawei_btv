@@ -65,7 +65,6 @@
 /sec_storage(/.*)?     							u:object_r:teecd_data_file:s0
 /modem_log(/.*)?       							u:object_r:modem_log_file:s0
 /mnvm2:0(/.*)?									u:object_r:system_file:s0
-/patch_hw(/.*)?                                       			u:object_r:system_file:s0
 
 /hw_odm(/.*)?          							u:object_r:rootfs:s0
 
