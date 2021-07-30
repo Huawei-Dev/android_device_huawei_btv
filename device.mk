@@ -131,6 +131,10 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
     lights.hi3650
+    
+# MAC Loader
+PRODUCT_PACKAGES += \
+    mac_nvme
 
 # Memtrack
 PRODUCT_PACKAGES += \
