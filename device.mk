@@ -283,16 +283,12 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.2 \
-    android.hardware.wifi.supplicant@1.2 \
-    android.hardware.wifi.hostapd@1.1 \
-    android.hardware.wifi.offload@1.0 \
-    libkeystore-engine-wifi-hidl \
-    libkeystore-wifi-hidl
-
-PRODUCT_PACKAGES += \
-    libwpa_client \
-    wificond
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
+    
+include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1 \
