@@ -62,7 +62,7 @@ firmware_directories /vendor/firmware/
 
 # Huawei stuff
 /dev/act                  			0660 radio radio
-/dev/hwlog_exception      			0662 root log
+/dev/hwlog_exception      			0664 system log
 /dev/log_hilog            			0662 root log
 /dev/graphics/fb2       			0660 system system
 /dev/netstream            			0660 root root
