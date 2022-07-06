@@ -1,6 +1,7 @@
 on fs
     wait /dev/block/platform/hi_mci.0
     symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
+    symlink /dev/block/by-name/${ro.boot.super_partition} /dev/block/by-name/super
 
 on property:init.svc.recovery=running
     trigger enable-low-power
