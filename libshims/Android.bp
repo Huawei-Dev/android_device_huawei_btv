@@ -41,3 +41,10 @@ cc_library_shared {
     system_ext_specific: true,
     vendor_available: true,
 }
+
+cc_library_shared {
+    name: "libui_shim",
+    shared_libs: ["libui"],
+    srcs: ["libui/GraphicBuffer.cpp"],
+    compile_multilib: "64",
+}
