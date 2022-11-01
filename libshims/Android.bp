@@ -63,6 +63,7 @@ cc_library_shared {
         "libui/GraphicBufferMapper.cpp",
     ],
     compile_multilib: "64",
+    vendor_available: true,
 }
 
 cc_library_shared {
