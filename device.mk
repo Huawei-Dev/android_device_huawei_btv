@@ -274,7 +274,8 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_PACKAGES += \
     libui-v28
-    
+
+PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_USE_VNDK_OVERRIDE := true
  
 # Vr
