@@ -1,6 +1,21 @@
+# Audio
+ro.config.hw_music_lp=true
+ro.config.music_lp_vol=true
+persist.media.offload.enable=true
+ro.audio.offload_wakelock=false
+persist.media.lowlatency.enable=false
+
 # BT
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 persist.bt.enableAptXHD=true
+
+# CPU
+persist.sys.cpuset.enable=1
+persist.sys.cpuset.subswitch=250
+persist.sys.iaware.cpuenable=true
+persist.sys.fast_h_duration=2000
+persist.sys.fast_h_max=50
+persist.sys.max_rdh_delay=0
 
 # Dalvik
 dalvik.vm.dex2oat-filter=speed
@@ -21,7 +36,7 @@ drm.service.enabled=true
 
 ro.media.radar=0
 ro.config.enable_iaware=true
-    
+
 # Launcher
 lockscreen.rot_override=true
 
@@ -35,6 +50,7 @@ ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
 
 # Gralloc
 ro.config.mmu_en=1
+persist.smart_pool=1
     
 # Media
 persist.media.offload.enable=true
@@ -60,6 +76,11 @@ ro.vendor.qti.sys.fw.bg_apps_limit=60
 ro.am.reschedule_service=true
 persist.sys.smart_power=2
 
+# Perfgenius
+ro.config.hw_perfgenius=true
+ro.config.hw_board_ipa=true
+persist.irqbalance.enable=true
+
 # RIL
 ro.config.ipv4.mtu=1400
 audioril.lib=libhuawei-audio-ril.so
@@ -81,8 +102,9 @@ wifi.direct.interface=p2p0
 # Q
 debug.sf.disable_backpressure=1
 
+# VR
 ro.vr_display.service=true
-persist.irqbalance.enable=true
+persist.egl.support_vr=1
 
 # Touch
 persist.sys.fingersense=1
