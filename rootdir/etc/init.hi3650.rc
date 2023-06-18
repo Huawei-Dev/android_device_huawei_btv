@@ -282,9 +282,9 @@ on init
     chmod 0660 /dev/nxp_smartpa_dev
 
     chown system system /dev/sensorhub
-    chmod 0660 /dev/sensorhub
+    chmod 0664 /dev/sensorhub
     chown system system /dev/motionhub
-    chmod 0660 /dev/motionhub
+    chmod 0664 /dev/motionhub
     
     write /sys/module/dm_verity/parameters/prefetch_cluster 16384
     write /sys/module/dm_bufio/parameters/max_cache_size_bytes 383385600
