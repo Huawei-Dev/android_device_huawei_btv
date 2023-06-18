@@ -85,11 +85,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
+    
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl
 
 # ConfigStore
 PRODUCT_PACKAGES += \
     disable_configstore
-    
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
