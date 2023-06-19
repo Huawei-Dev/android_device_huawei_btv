@@ -143,6 +143,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.hi3650
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+
 # Vendor
 TARGET_COPY_OUT_VENDOR := vendor
 
