@@ -136,10 +136,9 @@ on init
     chown system system /sys/kernel/perfhub/cpuaffinity
     chmod 0660 /sys/kernel/perfhub/cpuaffinity
 
-    write /proc/sys/kernel/hung_task_panic 1
+    write /proc/sys/kernel/hung_task_panic 0
     write /proc/sys/kernel/hung_task_timeout_secs 120
-    write /sys/kernel/hungtask/monitorlist "whitelist,system_server,surfaceflinger"
-    write /sys/kernel/hungtask/enable "on"
+    write /sys/kernel/hungtask/enable "off"
 
     chmod 0750 /sys/kernel/mntn/
     chmod 0750 /sys/kernel/mntn/switch/
