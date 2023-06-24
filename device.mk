@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
     
+# Misc
+PRODUCT_PACKAGES += \
+    libxcollie
+    
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi3650 \
