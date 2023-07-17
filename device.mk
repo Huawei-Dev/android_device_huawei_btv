@@ -271,6 +271,9 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
+    
+PRODUCT_PACKAGES += \
+    libui-v28
  
 # Vr
 PRODUCT_PACKAGES += \
