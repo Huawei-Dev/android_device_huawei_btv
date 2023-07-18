@@ -55,3 +55,9 @@ cc_library_shared {
     ],
     compile_multilib: "64",
 }
+
+cc_library_shared {
+    name: "guivnd",
+    shared_libs: ["libgui_vendor"],
+    vendor: true,
+}
