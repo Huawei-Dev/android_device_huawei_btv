@@ -51,3 +51,9 @@ cc_library_shared {
     shared_libs: ["libui", "libutils"],
     vendor: true,
 }
+
+cc_library_shared {
+    name: "guivnd",
+    shared_libs: ["libgui_vendor"],
+    vendor: true,
+}
