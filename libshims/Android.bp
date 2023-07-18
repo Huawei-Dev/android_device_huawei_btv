@@ -34,3 +34,13 @@ cc_library_shared {
     product_specific: true,
     vendor_available: true,
 }
+
+cc_library {
+    name: "libbinder_shim",
+    shared_libs: ["libbinder", "libutils"],
+    srcs: [
+        "libbinder/IServiceManager.cpp",
+        "libbinder/PermissionCache.cpp",
+    ],
+    vendor: true
+}
