@@ -248,6 +248,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
     android.hardware.radio@1.0_types.vendor \
     libtinyxml2_shim.vendor \
+    libsensor_vendor \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
