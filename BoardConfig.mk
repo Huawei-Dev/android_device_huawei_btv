@@ -15,6 +15,9 @@
 
 DEVICE_PATH := device/huawei/btv
 
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
