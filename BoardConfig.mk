@@ -119,9 +119,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USES_MKE2FS := true
 
 BOARD_ROOT_EXTRA_FOLDERS :=  \
-	cust \
-	version \
-	produce \
 	splash2 \
 	3rdmodem \
 	3rdmodemnvm \
