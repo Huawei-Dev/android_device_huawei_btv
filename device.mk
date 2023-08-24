@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/native_packages.zip:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.xml
+    $(LOCAL_PATH)/prebuilts/native_packages.zip:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.zip
     
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
