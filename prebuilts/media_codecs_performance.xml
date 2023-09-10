@@ -15,19 +15,12 @@
 -->
 <MediaCodecs>
     <Encoders>
-        <MediaCodec name="OMX.hisi.video.encoder.avc" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="150-477" />
-            <Limit name="measured-frame-rate-720x480" range="193-425" />
-            <Limit name="measured-frame-rate-1280x720" range="74-175" />
-            <Limit name="measured-frame-rate-1920x1080" range="42-97" />
+        <MediaCodec name="OMX.IMG.TOPAZ.VIDEO.Encoder" type="video/avc" update="true">
+            <Limit name="measured-frame-rate-320x240" range="477-477" />
+            <Limit name="measured-frame-rate-720x480" range="173-173" />
+            <Limit name="measured-frame-rate-1280x720" range="75-75" />
+            <Limit name="measured-frame-rate-1920x1080" range="37-37" />
         </MediaCodec>
-	<MediaCodec name="OMX.hisi.video.encoder.hevc" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="300-600" />
-            <Limit name="measured-frame-rate-640x360" range="442-442" />
-            <Limit name="measured-frame-rate-720x480" range="166-367" />
-            <Limit name="measured-frame-rate-1280x720" range="59-190" />
-            <Limit name="measured-frame-rate-1920x1080" range="91-91" />
-	</MediaCodec> 
         <MediaCodec name="OMX.google.h264.encoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="375-430" />
             <Limit name="measured-frame-rate-720x480" range="156-193" />
