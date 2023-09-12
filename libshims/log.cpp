@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
+extern "C" {
+
 void __android_logPower_print(void) {
-}
+	}
 
 int __android_janklog_print(void) {
     return 0;
-}
+	}
 
 int __android_log_exception_write(void) {
     return 0;
-}
+	}
 
-void android_log_printLogLine()
-{
+void android_log_printLogLine() {
     return;
-}
+	}
 
-void android_log_shouldPrintLine()
-{
+void android_log_shouldPrintLine() {
     return;
+	}
 }

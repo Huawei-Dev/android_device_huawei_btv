@@ -178,7 +178,7 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
-    libshim_log
+    liblog_vendor
     
 PRODUCT_PACKAGES += \
     libstdc++.vendor
