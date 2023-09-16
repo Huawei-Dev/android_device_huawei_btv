@@ -19,6 +19,17 @@ ifneq ($(filter btv,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+# libsensor_vendor.so -> libsensor.so
+SENSOR_LIB32 := $(TARGET_OUT_VENDOR)/lib/libsensor.so
+$(SENSOR_LIB32): $(TARGET_OUT_VENDOR)/lib/libsensor_vendor.so
+	@echo "Move vendor libsensor_vendor.so to libsensor.so"
+	$(hide) mv $(TARGET_OUT_VENDOR)/lib/libsensor_vendor.so $@
+
+SENSOR_LIB64 := $(TARGET_OUT_VENDOR)/lib64/libsensor.so
+$(SENSOR_LIB64): $(TARGET_OUT_VENDOR)/lib64/libsensor_vendor.so
+	@echo "Move vendor libsensor_vendor.so to libsensor.so"
+	$(hide) mv $(TARGET_OUT_VENDOR)/lib64/libsensor_vendor.so $@
+
 # Wifi symlink 
 WIFI_SYS := $(TARGET_OUT)/etc/wifi
 $(WIFI_SYS): $(LOCAL_INSTALLED_MODULE)
@@ -49,5 +60,5 @@ $(NATIVE_PACKAGES_FIXUP): $(TARGET_OUT_VENDOR)/etc/native_packages.bin
 	@echo "Move vendor native_packages.bin to native_packages.xml"
 	$(hide) mv $(TARGET_OUT_VENDOR)/etc/native_packages.bin $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(WIFI_SYS) $(NATIVE_PACKAGES_FIXUP) $(EGL_32_SYMLINKS) $(EGL_64_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(SENSOR_LIB32) $(SENSOR_LIB64) $(WIFI_SYS) $(NATIVE_PACKAGES_FIXUP) $(EGL_32_SYMLINKS) $(EGL_64_SYMLINKS)
 endif
