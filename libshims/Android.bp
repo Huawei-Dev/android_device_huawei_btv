@@ -65,7 +65,6 @@ cc_library_shared {
         "libui",
         "libshim_ui",
         "libui_shim",
-        "libtinyxml2_shim"
     ],
     vendor: true,
 }
