@@ -25,11 +25,6 @@ on init
     write /sys/module/hisi_nve/parameters/nve /dev/block/bootdevice/by-name/nvme
     
     wait /dev/nve0
-    chmod 0770 /dev/nve0
-    chown root system /dev/nve0
-    
-    chown radio system /dev/flp
-    chmod 0660 /dev/flp
     
     chmod 0400 /dev/hisi_teelog
     
@@ -226,30 +221,8 @@ on init
     chown system system /dev/cpuset/vip/tasks
     chmod 0664 /dev/cpuset/vip/tasks
     
-    chmod  0660  /dev/madapt
-    chown  radio  radio  /dev/madapt
-    
-    chmod 0660 /dev/vmodem
-    chown radio radio /dev/vmodem
-
-    chmod 0660 /dev/ttyAMA1
-    chown radio radio /dev/ttyAMA1
-    
-    chmod 0660 /dev/hwlog_tag
-    chown system system /dev/hwlog_tag
-    chmod 0662 /dev/hwlog_jank
-    chown root system /dev/hwlog_jank
-    chmod 0662 /dev/hwlog_bdat
-    chmod 0660 /dev/hwlog_ptm
-    chown root system /dev/hwlog_ptm
-
-    chmod 0660 /dev/bdat
-    
     mkdir /dev/frz
     mount cgroup none /dev/frz freezer
-
-    chmod 0660 /dev/hwlog_switch
-    chown logd system /dev/hwlog_switch
 
     mkdir /dev/frz/aware_frozen
     chmod 0660 /dev/frz/aware_frozen
@@ -259,32 +232,6 @@ on init
     chmod 0660 /sys/devices/platform/fingerprint/read_image_flag
     chown system system /sys/devices/platform/fingerprint/nav
     chmod 0660 /sys/devices/platform/fingerprint/nav
-    
-    chown media media /dev/maxim_smartpa_dev
-    chmod 0660 /dev/maxim_smartpa_dev
-    chown media media /dev/deviceboxID
-    chmod 0660 /dev/deviceboxID
-    chown media media /dev/speakerID
-    chmod 0660 /dev/speakerID
-    chown media media /dev/hi6402_hifi_misc
-    chmod 0660 /dev/hi6402_hifi_misc
-    chown media media /dev/ttyAMA0
-    chmod 0660 /dev/ttyAMA0
-    chown media media /dev/anc_hs
-    chmod 0660 /dev/anc_hs
-    chown media media /dev/tfa9895
-    chmod 0660 /dev/tfa9895
-    chown media media /dev/ear_pa
-    chmod 0660 /dev/ear_pa
-    chown media media /dev/soundtrigger_dma_drv
-    chmod 0660 /dev/soundtrigger_dma_drv
-    chown media media /dev/nxp_smartpa_dev
-    chmod 0660 /dev/nxp_smartpa_dev
-
-    chown system system /dev/sensorhub
-    chmod 0664 /dev/sensorhub
-    chown system system /dev/motionhub
-    chmod 0664 /dev/motionhub
     
     write /sys/module/dm_verity/parameters/prefetch_cluster 16384
     write /sys/module/dm_bufio/parameters/max_cache_size_bytes 383385600
@@ -459,67 +406,8 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on early-boot
-    chmod 660 /dev/appvcom
-    chmod 660 /dev/appvcom1
-    chmod 660 /dev/appvcom2
-    chmod 660 /dev/appvcom3
-    chmod 660 /dev/appvcom4
-    chmod 660 /dev/appvcom5
-    chmod 660 /dev/appvcom6
-    chmod 660 /dev/appvcom7
-    chmod 660 /dev/appvcom8
-    chmod 660 /dev/appvcom9
-    chmod 660 /dev/appvcom10
-    chmod 660 /dev/appvcom11
-    chmod 660 /dev/appvcom12
-    chmod 660 /dev/appvcom13
-    chmod 660 /dev/appvcom14
-    chmod 660 /dev/appvcom15
-    chmod 660 /dev/appvcom16
-    chmod 660 /dev/appvcom17
-    chmod 660 /dev/appvcom18
-    chmod 660 /dev/appvcom19
-    chmod 660 /dev/appvcom20
-    chmod 660 /dev/appvcom21
-    chmod 660 /dev/appvcom22
-    chmod 660 /dev/appvcom23
-    chmod 660 /dev/appvcom24
-    chmod 660 /dev/appvcom25
-    chmod 660 /dev/appvcom26
-    chmod 660 /dev/appvcom27
-    chmod 660 /dev/appvcomTLLOG
-    chmod 660 /dev/appvcomERRLOG
-    chmod 660 /dev/appvcomLOG
-    chmod 660 /dev/appvcomLOG1
-    
-    chown radio radio /dev/appvcom
-    chown radio radio /dev/appvcom1
-    chown radio radio /dev/appvcom5
-    chown radio radio /dev/appvcom6
-    chown radio radio /dev/appvcom10
-    chown radio radio /dev/appvcom13
-    chown radio radio /dev/appvcom14
-    chown radio radio /dev/appvcom15
-    chown radio radio /dev/appvcom20
-    chown radio radio /dev/appvcom21
-    chown radio radio /dev/appvcom25
-    chown radio radio /dev/appvcom26
-    
-    chown media media /dev/appvcom4
-    chown media media /dev/appvcom12
-    
-    chown system system /dev/appvcom2
-    chown system system /dev/appvcom8
-    chown system system /dev/appvcom22
-
-    chown system system /dev/appvcom17
-
-    chown system system /dev/appvcomERRLOG
-
     chown system system /proc/portcfg
-
     chown system system /proc/getslice
-
     chown media media /sys/class/graphics/fb0/effect_ce
 
     setprop viatel.device.fls  spi.2.ttySPI
@@ -619,15 +507,9 @@ on boot
     write /sys/kernel/debug/kmemleak scan=14400
     chown radio radio /proc/modemstatus
     
-    # Oeminfo
-    chmod 0666 /dev/socket/oeminfo_nvm
-    chown system system /dev/socket/oeminfo_nvm
-    
     chown root radio /proc/cmdline
     chmod 0666 /proc/cmdline
     
-    chown system system /dev/fingerprint
-    chmod 0660 /dev/fingerprint
     chown system system /sys/devices/platform/fingerprint/irq
     chmod 0660 /sys/devices/platform/fingerprint/irq
     chown system system /sys/devices/platform/fingerprint/result
