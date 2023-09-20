@@ -1059,8 +1059,14 @@ service hisi-sh /vendor/bin/init.hisi.sh
     user root
     group root system
     oneshot
-
-service irqbalance /vendor/bin/irqbalance   
+    
+service hwo-sh /system/bin/init.hwo.sh
+    class late_start
+    user root
+    group root system
+    oneshot
+    
+service irqbalance /vendor/bin/irqbalance
     user root
     group system
     disabled
