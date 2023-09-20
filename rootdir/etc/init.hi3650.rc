@@ -290,10 +290,12 @@ on init
     write /sys/module/dm_verity/parameters/prefetch_cluster 16384
     write /sys/module/dm_bufio/parameters/max_cache_size_bytes 383385600
     
-on fs
-    wait /dev/block/platform/hi_mci.0/by-name/oeminfo
+on early-fs
+    # Oeminfo
+    wait /dev/block/bootdevice/by-name/oeminfo
     start oeminfo_nvm
-
+    
+on fs
     wait /dev/block/platform/hi_mci.0/by-name
     mount_all /vendor/etc/fstab.hi3650 --early
     
@@ -617,6 +619,10 @@ on early-boot
 on boot
     write /sys/kernel/debug/kmemleak scan=14400
     chown radio radio /proc/modemstatus
+    
+    # Oeminfo
+    chmod 0666 /dev/socket/oeminfo_nvm
+    chown system system /dev/socket/oeminfo_nvm
     
     chown root radio /proc/cmdline
     chmod 0666 /proc/cmdline
