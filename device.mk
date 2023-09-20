@@ -160,6 +160,7 @@ PRODUCT_PACKAGES += \
     init.hi3650.rc \
     init.hi3650.usb.configfs.rc \
     init.hi3650.usb.rc \
+    init.hisi.sh \
     init.recovery.hi3650.rc \
     init.safailnet.rc \
     ueventd.hi3650.rc

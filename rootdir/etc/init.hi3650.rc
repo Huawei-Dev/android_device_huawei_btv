@@ -1054,7 +1054,13 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     ioprio rt 4
     
 # Oreo
-service irqbalance /vendor/bin/irqbalance
+service hisi-sh /vendor/bin/init.hisi.sh
+    class late_start
+    user root
+    group root system
+    oneshot
+
+service irqbalance /vendor/bin/irqbalance   
     user root
     group system
     disabled
