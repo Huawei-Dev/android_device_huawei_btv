@@ -1,21 +1,31 @@
 on init
+    chown system system /sys/class/leds/lcd_backlight0/brightness
+    chmod 664 /sys/class/leds/lcd_backlight0/brightness
+ 
+ # Red LED 
+    chown system system /sys/class/leds/red/brightness    
     chmod 664 /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/delay_off
+    chmod 664 /sys/class/leds/red/delay_off
+    chown system system /sys/class/leds/red/delay_on
+    chmod 664 /sys/class/leds/red/delay_on
+ 
+ # Blue LED
+     chown system system /sys/class/leds/blue/brightness
+     chmod 664 /sys/class/leds/blue/brightness
+     chown system system /sys/class/leds/blue/delay_off
+     chmod 664 /sys/class/leds/blue/delay_off
+     chown system system /sys/class/leds/blue/delay_on
+     chmod 664 /sys/class/leds/blue/delay_on
+ 
+ # Green LED
     chmod 664 /sys/class/leds/green/brightness
     chown system system /sys/class/leds/green/brightness
-    chmod 664 /sys/class/leds/blue/brightness
-    chown system system /sys/class/leds/blue/brightness
-
-    chmod 664 /sys/class/leds/red/delay_off
-    chown system system /sys/class/leds/red/delay_off
-    chmod 664 /sys/class/leds/green/delay_off
     chown system system /sys/class/leds/green/delay_off
-    chmod 664 /sys/class/leds/blue/delay_off
-    chown system system /sys/class/leds/blue/delay_off
-
-    chmod 664 /sys/class/leds/red/delay_on
-    chown system system /sys/class/leds/red/delay_on
-    chmod 664 /sys/class/leds/green/delay_on
+    chmod 664 /sys/class/leds/green/delay_off
     chown system system /sys/class/leds/green/delay_on
-    chmod 664 /sys/class/leds/blue/delay_on
-    chown system system /sys/class/leds/blue/delay_on
+    chmod 664 /sys/class/leds/green/delay_on
+    
+    
+    
+    

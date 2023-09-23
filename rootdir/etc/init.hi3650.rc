@@ -671,8 +671,6 @@ on boot
     chmod 0660 /sys/class/hw_power/charger/direct_charger/iin_thermal
     chown system system /sys/class/hw_power/charger/direct_charger/iin_thermal
     
-    chown system system /sys/class/leds/lcd_backlight0/brightness
-    chmod 644 /sys/class/leds/lcd_backlight0/brightness
     chown system system /sys/class/graphics/fb0/sbl_ctrl
     chown system system /sys/class/graphics/fb0/lcd_color_temperature
     chown system system /sys/class/graphics/fb0/led_rg_lcd_color_temperature
@@ -719,16 +717,6 @@ on boot
     chown system system /sys/class/graphics/fb0/alpm_function
     chown system system /sys/class/graphics/fb0/alpm_setting
     chown system system /sys/class/graphics/fb0/amoled_vr_mode
-    
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/red/delay_off
-    chown system system /sys/class/leds/red/delay_on
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/green/delay_off
-    chown system system /sys/class/leds/green/delay_on
-    chown system system /sys/class/leds/blue/brightness
-    chown system system /sys/class/leds/blue/delay_off
-    chown system system /sys/class/leds/blue/delay_on
     
     chown system system /sys/class/leds/blue/trigger
     chown system system /sys/class/leds/red/trigger
