@@ -411,7 +411,7 @@ error:
 			}
 		}
 		initialized = true;
-		ALOGI("Lights HAL for hi6620oem initialized");
+		ALOGI("Lights HAL for hi3650oem initialized");
 	}
 	pthread_mutex_unlock(&g_lock);
 
@@ -453,7 +453,7 @@ hw_module_t HAL_MODULE_INFO_SYM = {
 	.version_major = 1,
 	.version_minor = 0,
 	.id = LIGHTS_HARDWARE_MODULE_ID,
-	.name = "Lights HAL Module For hi6620oem Platform",
+	.name = "Lights HAL Module For hi3650oem Platform",
 	.author = "Kostyan_nsk",
 	.methods = &lights_module_methods,
 };
