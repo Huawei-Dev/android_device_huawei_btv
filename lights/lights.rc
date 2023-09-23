@@ -1,6 +1,8 @@
 on init
     chown system system /sys/class/leds/lcd_backlight0/brightness
     chmod 664 /sys/class/leds/lcd_backlight0/brightness
+    chown system system /sys/class/leds/lcd_backlight0/brightness
+    chmod 664 /sys/class/leds/lcd_backlight0/brightness
  
  # Red LED 
     chown system system /sys/class/leds/red/brightness    
