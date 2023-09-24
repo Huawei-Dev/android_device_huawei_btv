@@ -24,7 +24,6 @@ on post-fs-data
     mkdir /data/vendor/audio 0770 audio audio
     mkdir /data/vendor/audio/ 0770 media audio
     
-on boot    
 service octty /vendor/bin/octty
     class core
     user system
@@ -52,12 +51,6 @@ on property:setup_hi110x_modules=success
     start supl20clientd
     start watchlssd
     write /dev/kmsg "hi110x_modules has started"
-
-service macaddr /vendor/bin/mac_addr_normalization
-    class late_start
-    user root
-    group root bluetooth wifi system
-    oneshot
     
 service wpa_supplicant /vendor/bin/wpa_supplicant_hisi -d \
     -puse_p2p_group_interface=1 \
