@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
+    libdng_sdk.vendor \
     libstdc++.vendor \
     libpcap.vendor
     
