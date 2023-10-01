@@ -1,0 +1,4 @@
+libGLES_mali.so
+libOpenCL.so
+vulkan.hi3650.so
+libteec.so

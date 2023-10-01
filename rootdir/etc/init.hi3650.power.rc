@@ -1,0 +1,225 @@
+on early-init
+
+    write /sys/block/mmcblk0/queue/scheduler noop
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
+    
+on init
+    chown system system /sys/class/hisi_thermal/spm/spm_mode
+    chmod 644 /sys/class/hisi_thermal/spm/spm_mode
+
+    chown system system /sys/class/hisi_thermal/spm/vr_mode
+    chmod 644 /sys/class/hisi_thermal/spm/vr_mode
+
+    chown system system /sys/class/hisi_thermal/spm/spm_freq
+    chmod 644 /sys/class/hisi_thermal/spm/spm_freq
+
+    chown system system /sys/class/hisi_thermal/spm/vr_freq
+    chmod 644 /sys/class/hisi_thermal/spm/vr_freq
+
+    chown system system /sys/class/hisi_thermal/spm/min_freq
+    chmod 644 /sys/class/hisi_thermal/spm/min_freq
+
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+    chmod 664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+    chown system system /dev/acpuddr_link_governor_level
+    chmod 664 /dev/acpuddr_link_governor_level
+    chown system system /dev/cpu_dma_latency
+    chmod 660 /dev/cpu_dma_latency
+
+    chown system system /sys/devices/virtual/thermal/thermal_zone1/boost
+    chmod 660 /sys/devices/virtual/thermal/thermal_zone1/boost
+    chown system system /sys/devices/virtual/thermal/thermal_zone1/boost_timeout
+    chmod 660 /sys/devices/virtual/thermal/thermal_zone1/boost_timeout
+
+    chown system system /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost
+    chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost
+    chown system system /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq
+    chmod 664 /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq
+
+    chown system system /sys/kernel/eas/boost
+    chmod 0664 /sys/kernel/eas/boost
+
+    chown system system /sys/kernel/eas/capacity_margin
+    chmod 0664 /sys/kernel/eas/capacity_margin
+
+    chown system system /sys/class/thermal/thermal_zone0/mode
+    chmod 0664 /sys/class/thermal/thermal_zone0/mode
+    chown system system /sys/class/thermal/thermal_zone0/type
+    chmod 0440 /sys/class/thermal/thermal_zone0/type
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chmod 0664 /sys/class/thermal/thermal_zone0/trip_point_0_temp
+    chown system system /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chmod 0664 /sys/class/thermal/thermal_zone0/trip_point_1_temp
+    chown system system /sys/class/thermal/thermal_zone0/sustainable_power
+    chmod 0664 /sys/class/thermal/thermal_zone0/sustainable_power
+
+    chown system system /sys/kernel/perfhub/cpuaffinity
+    chmod 0660 /sys/kernel/perfhub/cpuaffinity
+   
+    # DDR
+    write /sys/class/devfreq/ddrfreq/min_freq 1333000000
+    write /sys/class/devfreq/ddrfreq/max_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_latency/min_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_latency/max_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 1333000000
+    
+    # GPU
+    write /sys/class/devfreq/gpufreq/min_freq 900000000
+    write /sys/class/devfreq/gpufreq/max_freq 900000000
+    
+    # CPU
+    write sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1805000
+    write sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1805000
+    write sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 2304000
+    write sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2304000    
+    
+    write /proc/sys/kernel/hung_task_panic 1
+    write /proc/sys/kernel/hung_task_timeout_secs 90
+    write /sys/kernel/hungtask/monitorlist "whitelist,system_server,surfaceflinger,init"
+    write /sys/kernel/hungtask/enable "on"
+    chown system system /sys/kernel/hungtask/vm_heart
+
+on enable-low-power
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
+    
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_min_interval
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_min_interval
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost
+    chown system  system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse
+    chown system  system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+    chown system  system /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_min_interval
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_min_interval
+    chown system  system /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
+    chown system system /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load   
+
+    # bring all CPUs online
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu4/online 1
+    write /sys/devices/system/cpu/cpu5/online 1
+    write /sys/devices/system/cpu/cpu6/online 1
+    write /sys/devices/system/cpu/cpu7/online 1
+    
+    # Set lowmemorykiller tuning parameters
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
+    write /sys/module/lowmemorykiller/parameters/adj "0,100,200,300,900,906"
+    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,55296,80640"
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
+    
+on property:init.svc.recovery=running
+    trigger enable-low-power
+
+on charger
+    # Offline all cores other than CPU0
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
+    setprop sys.io.scheduler bfq
+
+    write /sys/kernel/hmp/boost 0
+    rm /data/hisi_logs/reboot_times.log
+
+    setprop sys.usb.ffs_hdb.ready 0
+
+on property:sys.boot_completed=1
+    setprop persist.sys.smart_power ${persist.sys.smart_power}
+    
+on property:sys.boot_completed=1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
+    
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1306000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 70:807000:80:1018000:90:1306000:95
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 79000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 1
+
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
+    
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1210000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 80:807000:81:1210000:85:1517000:95
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 39000:1210000:89000:1517000:19000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 79000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 1
+
+    rm /data/hisi_logs/reboot_times.log
+
+    write /sys/class/devfreq/ddrfreq/min_freq 120000000
+    write /sys/class/devfreq/ddrfreq_latency/min_freq 120000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 120000000
+    write /sys/class/devfreq/gpufreq/min_freq 120000000
+    write sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 480000
+    write sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 480000

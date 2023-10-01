@@ -1,0 +1,14 @@
+type fps_sysfs, fs_type, sysfs_type;
+
+type sysfs_touchscreen, sysfs_type, fs_type;
+
+type modem_log_file, file_type, contextmount_type, vendor_file_type;
+
+type splash2_file, file_type, contextmount_type, vendor_file_type;
+
+type dmd_device, dev_type;
+type misc_dev_block, dev_type;
+type mke2fs_blkdev, dev_type;
+type nve_block_device, dev_type;
+type splash2_block_device, dev_type;
+type teecd_data_file, file_type;

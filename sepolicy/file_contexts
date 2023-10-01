@@ -1,0 +1,73 @@
+# Contexts hi3650
+
+/vendor/bin/hw/android.hardware.audio.@2.0-service				u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service		u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android.hardware.drm@1.2-service.widevine			u:object_r:hal_drm_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.gnss@1.0-service			u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.graphics.displayeffect@1.0-service	u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-service		u:object_r:hal_media_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.hisupl@1.0-service			u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.hwdisplay.displayengine@1.0-service	u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.hwdisplay@1.0-service			u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.light@2.0-service			u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.perfgenius@1.0-service			u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.power@1.0-service			u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/vendor.huawei.hardware.sensors@1.0-service			u:object_r:hal_sensors_default_exec:s0
+
+/vendor/bin/hw/vendor.lineage.touch@1.0-service.huawei_hi3650		u:object_r:hal_lineage_touch_default_exec:s0
+
+/vendor/bin/atcmdserver							u:object_r:atcmdserver_exec:s0
+/vendor/bin/diagserver								u:object_r:diagserver_exec:s0
+/vendor/bin/gnss_control_hisi							u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_engine_hisi							u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_supl20clientd_hisi						u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/hivwserver								u:object_r:hivwserver_exec:s0
+/vendor/bin/hostapd_hisi							u:object_r:hal_wifi_hostapd_default_exec:s0
+/vendor/bin/mac_addr_normalization						u:object_r:hwmac_exec:s0
+/vendor/bin/oam_hisi								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/octty								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/oeminfo_nvm_server						u:object_r:hwoeminfo_exec:s0
+/vendor/bin/start_connectivity_hisi						u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/teecd								u:object_r:tee_exec:s0
+/vendor/bin/wpa_supplicant_hisi						u:object_r:hal_wifi_supplicant_default_exec:s0
+
+/vendor/xbin/gnss_watchlssd_thirdparty					u:object_r:hal_gnss_default_exec:s0
+
+/data/fpc(/.*)?                                          			u:object_r:fingerprintd_data_file:s0
+/dev/fingerprint                                         			u:object_r:fps_device:s0
+/sys/devices/platform/fingerprint(/.*)?                  			u:object_r:fps_sysfs:s0
+
+/dev/oinv(/.*)?								u:object_r:hwoeminfo_device:s0
+/dev/socket/oeminfo_nvm							u:object_r:hwoeminfo_socket:s0
+
+# Oreo
+/vendor/bin/irqbalance								u:object_r:irqbalance_exec:s0
+#/vendor/bin/CameraDaemon							u:object_r:hwcamcfgsvr_exec:s0
+
+/dev/block/bootdevice/by-name/misc						u:object_r:misc_dev_block:s0
+/dev/block/bootdevice/by-name/modem_om					u:object_r:mke2fs_blkdev:s0
+/dev/block/bootdevice/by-name/modemnvm_img					u:object_r:mke2fs_blkdev:s0
+/dev/block/bootdevice/by-name/oeminfo						u:object_r:hwoem_partition_device:s0
+/dev/block/bootdevice/by-name/nvme						u:object_r:nve_block_device:s0
+/dev/block/bootdevice/by-name/splash2						u:object_r:splash2_block_device:s0
+/dev/block/bootdevice/by-name/userdata					u:object_r:userdata_block_device:s0
+
+/dev/dsm									u:object_r:dmd_device:s0
+
+# Rootfs
+/cust(/.*)?            							u:object_r:system_file:s0
+/version(/.*)?         							u:object_r:system_file:s0
+/produce(/.*)?									u:object_r:system_file:s0
+/splash2(/.*)?         							u:object_r:splash2_file:s0
+/3rdmodem(/.*)?								u:object_r:modem_log_file:s0
+/3rdmodemnvm(/.*)?								u:object_r:modem_log_file:s0
+/3rdmodemnvmbkp(/.*)?                                       			u:object_r:modem_log_file:s0
+/sec_storage(/.*)?     							u:object_r:teecd_data_file:s0
+/modem_log(/.*)?       							u:object_r:modem_log_file:s0
+/mnvm2:0(/.*)?									u:object_r:system_file:s0
+/patch_hw(/.*)?                                       			u:object_r:system_file:s0
+
+/hw_odm(/.*)?          							u:object_r:rootfs:s0
+
+# Sysinit
+/system/bin/sysinit                     					u:object_r:sysinit_exec:s0

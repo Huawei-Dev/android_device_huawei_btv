@@ -1,0 +1,2 @@
+type fps_device, dev_type;
+type hwoem_partition_device, dev_type;

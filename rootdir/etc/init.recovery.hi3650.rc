@@ -1,0 +1,6 @@
+on fs
+    wait /dev/block/platform/hi_mci.0
+    symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
+
+on property:init.svc.recovery=running
+    trigger enable-low-power

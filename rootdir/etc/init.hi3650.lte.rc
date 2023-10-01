@@ -1,0 +1,87 @@
+on fs
+    mount_all /vendor/etc/fstab.modem
+    chown radio radio sys/devices/platform/balong_power/state
+
+on property:ro.productid=0X3C22089D
+    setprop persist.radio.modem.cap 89894
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.dsds_mode umts
+    setprop ro.telephony.default_network 9
+    setprop ro.config.report_cell_info_list true
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.default_commril_mode ULG_MODE
+    
+on property:ro.productid=0X3C220414
+    setprop persist.radio.modem.cap 89895
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.dsds_mode umts
+    setprop ro.telephony.default_network 9
+    setprop ro.config.report_cell_info_list true
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.default_commril_mode ULG_MODE
+
+on property:ro.productid=0X3C220417
+    setprop persist.radio.modem.cap 89895
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.dsds_mode umts
+    setprop ro.telephony.default_network 9
+    setprop ro.config.report_cell_info_list true
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.default_commril_mode ULG_MODE
+
+on property:ro.productid=0X3C2204B8
+    setprop persist.radio.modem.cap 89895
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.dsds_mode umts
+    setprop ro.telephony.default_network 9
+    setprop ro.config.report_cell_info_list true
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.default_commril_mode ULG_MODE
+    
+on property:ro.productid=0X3C22040C
+    setprop persist.radio.modem.cap 89895
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.dsds_mode umts
+    setprop ro.telephony.default_network 9
+    setprop ro.config.report_cell_info_list true
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.default_commril_mode ULG_MODE
+    
+on property:ro.productid=0X3C220800
+    setprop ro.config.hw_dsda false
+    setprop ro.telephony.default_network 9
+    setprop ro.config.dsds_mode umts
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.config.report_cell_info_list true
+    setprop persist.radio.modem.cap 89895
+    setprop rild.rild1_ready_to_start false    
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so    
+    setprop ro.config.default_commril_mode ULG_MODE
+    
+on property:ro.productid=0X3C220400
+    setprop ro.config.report_cell_info_list true
+    setprop persist.radio.modem.cap 89895
+    setprop rild.libpath /vendor/lib64/libbalong-ril.so
+    setprop rild.rild1_ready_to_start false
+    setprop ro.config.hw_dsda false
+    setprop ro.multi.rild false
+    setprop persist.dsds.enabled false
+    setprop ro.telephony.default_network 9
+    setprop ro.config.dsds_mode umts
+    setprop ro.config.default_commril_mode ULG_MODE

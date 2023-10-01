@@ -1,0 +1,88 @@
+# BT
+ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
+persist.bt.enableAptXHD=true
+
+# Dalvik
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=384m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
+
+debug.hwui.profile=true
+ro.opengles.version=196610
+
+# DRM
+ro.config.widevine_level3=true
+drm.service.enabled=true
+
+ro.media.radar=0
+ro.config.enable_iaware=true
+    
+# Launcher
+lockscreen.rot_override=true
+
+# local
+net.tethering.noprovisioning=true
+ro.config.hw_lte_support=true
+gsm.fastdormancy.mode=3
+
+# FRP
+ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
+
+# Gralloc
+ro.config.mmu_en=1
+    
+# Media
+persist.media.offload.enable=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+debug.stagefright.ccodec=0
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
+
+# Misc
+persist.sys.huawei.debug.on=1
+qemu.hw.mainkeys=0
+    
+# Netflix
+ro.netflix.bsp_rev=Q660-13149-1
+
+# Performance
+ro.vendor.qti.sys.fw.bg_apps_limit=60
+ro.am.reschedule_service=true
+persist.sys.smart_power=2
+
+# RIL
+ro.config.ipv4.mtu=1400
+audioril.lib=libhuawei-audio-ril.so
+persist.radio.apm_sim_not_pwdn=1
+ro.pwroff_card_if_tray_out=true
+    
+# Sdcardfs
+ro.statsd.enable=false
+ro.sys.sdcardfs=1
+persist.sys.adoptable_fbe=true
+
+# Sensors
+ro.config.hw_sensorhub=true
+
+# wifi
+wifi.interface=wlan0
+wifi.direct.interface=p2p0
+
+ro.vr_display.service=true
+persist.irqbalance.enable=true
+
+# Touch
+persist.sys.fingersense=1
+   
+# USB
+persist.sys.usb.config.extra=none

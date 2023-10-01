@@ -1,0 +1,74 @@
+firmware_directories /vendor/firmware/
+
+/dev/ion                			0664 system system
+/dev/mali0              			0666 system system
+/dev/hisi_jpu           			0660 system system
+/dev/esm                			0660 system system
+/dev/rpmsg-hisi0        			0600 media media
+/dev/memory_throughput				0660 system system
+/dev/memory_throughput_up_threshold		0660 system system
+/dev/imgsysbrg_vdec0    			0660 system camera
+
+/dev/ttySPI0 					0660 root radio
+/dev/ttySPI1 					0660 root system
+/dev/ttySPI2 					0660 root radio
+/dev/ttySPI3 					0660 root system
+/dev/ttySPI4 					0440 root root
+/dev/ttySPI5 					0660 root system
+/dev/ttySPI6 					0660 root system
+/dev/ttySPI7 					0660 root radio
+/dev/ttySPI8 					0440 root root
+/dev/ttySPI9 					0660 root radio
+/dev/ttySPI10 					0660 root radio
+/dev/ttySPI11 					0660 root system
+/dev/ttySPI12 					0440 root root
+/dev/ttySPI13 					0440 root root
+/dev/ttySPI14 					0440 root root
+
+/dev/video*					0660 system camera
+
+/dev/media*					0660 system camera
+
+/dev/v4l-subdev*				0660 system camera
+
+/dev/hisi-ivp					0660 system camera
+/dev/ivp-ipc					0660 system camera
+
+/dev/memory_latency     			0660 system system
+
+/sys/class/leds/torch/flash_thermal_protect   0664 system system
+/dev/hifi_misc                                0770 root audio
+/dev/voice_proxy_vowifi                       0660 root audio
+/dev/block/mmcblk0p19                         0660 system system
+
+/dev/dsm                            		0660 system system
+/dev/hwtc					0660 system system
+
+/dev/block/mmcblk0				0660 system system
+/dev/block/mmcblk0p1                          0660 system system
+/dev/block/mmcblk0p4                		0660 system system
+/dev/block/mmcblk0p7				0660 system system
+/dev/block/mmcblk0p17				0660 system system
+/dev/block/mmcblk0p19				0660 system system
+/dev/block/mmcblk0p20               		0660 system system
+/dev/block/mmcblk0p23				0660 system system
+/dev/block/mmcblk0p26				0660 system system
+/dev/block/mmcblk0p35				0660 system system
+/dev/block/mmcblk0p37				0660 system system
+/dev/block/mmcblk0p38				0660 system system
+/dev/block/mmcblk0p39				0660 system system
+/dev/block/mmcblk0p42				0660 system system
+/dev/block/mmcblk0p48				0660 system system
+
+# Huawei stuff
+/dev/act                  			0660 radio radio
+/dev/hwlog_exception      			0662 root log
+/dev/log_hilog            			0662 root log
+/dev/graphics/fb2       			0660 system system
+/dev/netstream            			0660 root root
+
+/dev/hwvr0                			0664 root system
+/dev/hwvr1                			0664 root system
+/dev/hwvrdfu              			0660 root system
+
+/dev/ttyHwGS1					0660 root system
