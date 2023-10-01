@@ -185,5 +185,8 @@ TARGET_LD_SHIM_LIBS += /vendor/lib/egl/libGLES_mali.so|/system/lib/vndk-sp-29/li
 TARGET_LD_SHIM_LIBS += /vendor/lib/hw/gralloc.hi3650.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/hw/gralloc.hi3650.so|/system/lib64/vndk-sp-29/libutilscallstack.so
 TARGET_LD_SHIM_LIBS += /vendor/lib/hw/vulkan.hi3650.so|/system/lib/vndk-sp-29/libutilscallstack.so:/vendor/lib64/hw/vulkan.hi3650.so|/system/lib64/vndk-sp-29/libutilscallstack.so
 
+TARGET_LD_SHIM_LIBS += /vendor/lib/vendor.huawei.hardware.graphics.gpucommon@1.0.so|android.hardware.graphics.common@1.0_types.so
+TARGET_LD_SHIM_LIBS += /vendor/lib64/vendor.huawei.hardware.graphics.gpucommon@1.0.so|android.hardware.graphics.common@1.0_types.so
+
 # inherit from the proprietary version
 -include vendor/huawei/btv/BoardConfigVendor.mk
