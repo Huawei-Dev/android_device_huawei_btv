@@ -104,6 +104,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
     
+# Fingerprint sensor
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/native_packages.bin:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.bin
+    
 # Gralloc
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
