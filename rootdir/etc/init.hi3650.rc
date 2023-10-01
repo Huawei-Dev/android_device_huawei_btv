@@ -297,8 +297,6 @@ on fs
     wait /dev/block/platform/hi_mci.0/by-name
     mount_all /vendor/etc/fstab.hi3650 --early
     
-#    exec - root root -- /system/bin/sh /system/etc/init.d/hw_on
-
     restorecon /splash2
 
     mkdir /splash2/log 0775 system log
@@ -354,9 +352,6 @@ on post-fs-data
     setprop sys.userdata_is_ready 1
     start teecd
     setprop persist.sys.kmemleak.debug 0
-    
-    # Run sysinit
-    start sysinit
     
     mkdir /splash2/sim 0770 root system
     mkdir /splash2/sim/offlinelogs 0770 root system
@@ -463,8 +458,6 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on early-boot
-#    exec - root root -- /system/bin/sh /system/etc/init.d/hw_ln
-
     chmod 660 /dev/appvcom
     chmod 660 /dev/appvcom1
     chmod 660 /dev/appvcom2
@@ -1075,15 +1068,6 @@ service irqbalance /vendor/bin/irqbalance
 
 on property:persist.irqbalance.enable=true
     start irqbalance
-    
-# sysinit (/system/etc/init.d)
-service sysinit /system/bin/sysinit
-    user root
-    oneshot
-    disabled
-    
-on property:init.svc.bootanim=stopped
-    exec - root root -- /system/bin/sh /system/etc/init.d/hw_off
     
 on property:ro.boot.ddrsize=3
     swapon_all /vendor/etc/fstab.zram1536m
