@@ -109,6 +109,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_log
     
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
+    
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
