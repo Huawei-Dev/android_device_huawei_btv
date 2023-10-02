@@ -14,50 +14,33 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.xiaomi_8937"
+#define LOG_TAG "vendor.lineage.touch@1.0-service.hi3650"
 
 #include <android-base/logging.h>
-#include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
 
-#include "KeyDisabler.h"
+#include "GloveMode.h"
 
-using android::OK;
-using android::sp;
-using android::status_t;
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
+using ::android::OK;
+using ::android::sp;
 
-using ::vendor::lineage::touch::V1_0::IKeyDisabler;
-using ::vendor::lineage::touch::V1_0::implementation::KeyDisabler;
+using ::vendor::lineage::touch::V1_0::IGloveMode;
+using ::vendor::lineage::touch::V1_0::implementation::GloveMode;
 
 int main() {
-    sp<KeyDisabler> keyDisabler;
-    status_t status;
+    sp<IGloveMode> gloveMode = new GloveMode();
 
-    LOG(INFO) << "Touch HAL service is starting.";
+    android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    keyDisabler = new KeyDisabler();
-    if (keyDisabler == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Touch HAL KeyDisabler Iface, exiting.";
-        goto shutdown;
+    if (gloveMode->registerAsService() != OK) {
+        LOG(ERROR) << "Cannot register glove mode HAL service.";
+        return 1;
     }
+    
+    LOG(INFO) << "Touchscreen HAL service ready.";
 
-    configureRpcThreadpool(1, true /*callerWillJoin*/);
+    android::hardware::joinRpcThreadpool();
 
-    status = keyDisabler->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for Touch HAL KeyDisabler Iface ("
-                   << status << ")";
-        goto shutdown;
-    }
-
-    LOG(INFO) << "Touch HAL service is ready.";
-    joinRpcThreadpool();
-    // Should not pass this line
-
-shutdown:
-    // In normal operation, we don't expect the thread pool to shutdown
-    LOG(ERROR) << "Touch HAL service is shutting down.";
+    LOG(ERROR) << "Touchscreen HAL service failed to join thread pool.";
     return 1;
 }

@@ -65,4 +65,4 @@
 /hw_odm(/.*)?          							u:object_r:rootfs:s0
 
 # Touch
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_8937 u:object_r:hal_lineage_touch_default_exec:s0
+/vendor/bin/hw/vendor.lineage.touch@1.0-service.huawei_hi3650		u:object_r:hal_lineage_touch_default_exec:s0

@@ -18,7 +18,7 @@
 #include <android-base/logging.h>
 #include <android-base/strings.h>
 
-#include "KeyDisabler.h"
+#include "GloveMode.h"
 
 namespace vendor {
 namespace lineage {
@@ -26,19 +26,19 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-constexpr const char kControlPath[] = "/proc/touchpanel/capacitive_keys_enable";
+constexpr const char kControlPath[] = "/sys/touchscreen/touch_glove";
 
-KeyDisabler::KeyDisabler() {
-    mHasKeyDisabler = !access(kControlPath, F_OK);
+GloveMode::GloveMode() {
+    mHasGloveMode = !access(kControlPath, F_OK);
 }
 
-// Methods from ::vendor::lineage::touch::V1_0::IKeyDisabler follow.
-Return<bool> KeyDisabler::isEnabled() {
+// Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
+Return<bool> GloveMode::isEnabled() {
     std::string buf;
 
-    if (!mHasKeyDisabler) return false;
+    if (!mHasGloveMode) return false;
 
-    if (!android::base::ReadFileToString(kControlPath, &buf, true)) {
+    if (!android::base::ReadFileToString(kControlPath, &buf)) {
         LOG(ERROR) << "Failed to read " << kControlPath;
         return false;
     }
@@ -46,10 +46,10 @@ Return<bool> KeyDisabler::isEnabled() {
     return std::stoi(android::base::Trim(buf)) == 1;
 }
 
-Return<bool> KeyDisabler::setEnabled(bool enabled) {
-    if (!mHasKeyDisabler) return false;
+Return<bool> GloveMode::setEnabled(bool enabled) {
+    if (!mHasGloveMode) return false;
 
-    if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPath, true)) {
+    if (!android::base::WriteStringToFile((enabled ? "1" : "0"), kControlPath)) {
         LOG(ERROR) << "Failed to write " << kControlPath;
         return false;
     }

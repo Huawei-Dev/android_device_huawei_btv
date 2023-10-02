@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef VENDOR_LINEAGE_TOUCH_V1_0_KEYDISABLER_H
-#define VENDOR_LINEAGE_TOUCH_V1_0_KEYDISABLER_H
+#ifndef VENDOR_LINEAGE_TOUCH_V1_0_GLOVEMODE_H
+#define VENDOR_LINEAGE_TOUCH_V1_0_GLOVEMODE_H
 
-#include <vendor/lineage/touch/1.0/IKeyDisabler.h>
+#include <vendor/lineage/touch/1.0/IGloveMode.h>
 
 namespace vendor {
 namespace lineage {
@@ -27,16 +27,15 @@ namespace implementation {
 
 using ::android::hardware::Return;
 
-class KeyDisabler : public IKeyDisabler {
-  public:
-    KeyDisabler();
-
-    // Methods from ::vendor::lineage::touch::V1_0::IKeyDisabler follow.
+class GloveMode : public IGloveMode {
+   public:
+    GloveMode();
+    // Methods from ::vendor::lineage::touch::V1_0::IGloveMode follow.
     Return<bool> isEnabled() override;
     Return<bool> setEnabled(bool enabled) override;
 
-  private:
-    bool mHasKeyDisabler;
+   private:
+    bool mHasGloveMode;
 };
 
 }  // namespace implementation
@@ -45,4 +44,4 @@ class KeyDisabler : public IKeyDisabler {
 }  // namespace lineage
 }  // namespace vendor
 
-#endif  // VENDOR_LINEAGE_TOUCH_V1_0_KEYDISABLER_H
+#endif  // VENDOR_LINEAGE_TOUCH_V1_0_GLOVEMODE_H

@@ -13,14 +13,14 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.touch@1.0-service.xiaomi_8937",
-    init_rc: ["vendor.lineage.touch@1.0-service.xiaomi_8937.rc"],
+    name: "vendor.lineage.touch@1.0-service.hi3650",
+    init_rc: ["vendor.lineage.touch@1.0-service.hi3650.rc"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     vendor: true,
     srcs: [
-        "KeyDisabler.cpp",
-        "service.cpp"
+        "GloveMode.cpp",
+        "service.cpp",
     ],
     shared_libs: [
         "libbase",
