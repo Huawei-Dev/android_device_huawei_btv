@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service \
     lights.hi3650
     
+# Lineage hardware
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.hi3650
+    
 # MAC Loader
 PRODUCT_PACKAGES += \
     mac_nvme
