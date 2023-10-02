@@ -149,6 +149,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxcollie
     
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2-impl \
+    android.hardware.power.stats@1.0-service.mock
+    
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi3650 \
