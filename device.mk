@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
 # MAC Loader
 PRODUCT_PACKAGES += \
     mac_nvme
+    
+# Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
 
 # Memtrack
 PRODUCT_PACKAGES += \
