@@ -102,6 +102,9 @@ wifi.direct.interface=p2p0
 # Q
 debug.sf.disable_backpressure=1
 
+# vowifi
+ro.vendor.config.hw_vowifi=true
+
 # VR
 ro.vr_display.service=true
 persist.egl.support_vr=1

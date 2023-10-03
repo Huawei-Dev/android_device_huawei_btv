@@ -130,3 +130,5 @@ firmware_directories /vendor/firmware/
 /dev/appvcomLOG			0660	root system
 /dev/appvcomLOG1			0660	root system
 /dev/appvcomTLLOG			0660	root system
+
+/dev/voice_proxy_vowifi	0664	system audio
