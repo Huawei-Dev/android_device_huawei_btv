@@ -1,6 +1,6 @@
 on fs
-    wait /data/misc/bluedroid
-    wait /data/misc/wifi
+    wait /data/vendor/bluedroid
+    wait /data/vendor/wifi
     start mac_nvme
 
 service mac_nvme /vendor/bin/hw/mac_nvme
