@@ -915,7 +915,14 @@ on property:ro.multi.rild=false
 # Not used in getprop !!!    
 service atcmdserver /vendor/bin/atcmdserver
     class main
+    group root system nfc graphics audio camera
     disabled
+
+service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
+    class core
+    group system readproc root
+    critical
+    ioprio rt 4
        
 service diagserver /vendor/bin/diagserver
     class main
@@ -926,12 +933,6 @@ service teecd /vendor/bin/teecd
     class core
     user root
     group root readproc
-    
-service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
-    class core
-    group system readproc root
-    critical
-    ioprio rt 4
     
 # Oreo
 service hisi-sh /vendor/bin/init.hisi.sh
