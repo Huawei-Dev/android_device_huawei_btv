@@ -19,7 +19,9 @@ persist.sys.max_rdh_delay=0
 
 # Dalvik
 dalvik.vm.dex2oat-filter=speed
+dalvik.vm.dex2oat-threads=4
 dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.image-dex2oat-threads=4
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=384m
 dalvik.vm.heapsize=512m
@@ -51,6 +53,9 @@ ro.frp.pst=/dev/block/platform/hi_mci.0/by-name/frp
 # Gralloc
 ro.config.mmu_en=1
 persist.smart_pool=1
+
+# Kill HiSuite
+ro.cust.cdrom=/dev/null
     
 # Media
 persist.media.offload.enable=true
@@ -100,7 +105,11 @@ wifi.interface=wlan0
 wifi.direct.interface=p2p0
 
 # Q
+debug.sf.latch_unsignaled = 1
 debug.sf.disable_backpressure=1
+
+# vndk
+ro.vendor.vndk.version=26.0.0
 
 # vowifi
 ro.vendor.config.hw_vowifi=true
@@ -114,3 +123,6 @@ persist.sys.fingersense=1
    
 # USB
 persist.sys.usb.config.extra=none
+
+# WiFi Display
+persist.debug.wfd.enable=1
