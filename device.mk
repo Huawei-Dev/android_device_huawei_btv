@@ -210,6 +210,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
     
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.1 \
+    android.hardware.radio@1.1 \
+    android.hardware.radio.deprecated@1.0 \
+    librilutils \
+    reference-ril \
+    libprotobuf-cpp-full \
+    libtinyxml \
+    libxml2
+    
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
