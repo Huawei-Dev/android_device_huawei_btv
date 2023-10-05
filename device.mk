@@ -232,6 +232,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
+    android.hardware.radio@1.0_types.vendor \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
