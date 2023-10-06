@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl    

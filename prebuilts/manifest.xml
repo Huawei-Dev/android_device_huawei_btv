@@ -222,29 +222,20 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.huawei.hardware.gnss</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHWGnss</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.huawei.hardware.graphics.displayeffect</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IEffect</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.huawei.hardware.hwdisplay</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDisplay</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.huawei.hardware.hwdisplay.displayengine</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IDisplayEngineWrapper</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -267,11 +258,29 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.huawei.hardware.sensors</name>
+        <name>vendor.huawei.hardware.hisupl</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>ISensors</name>
+            <name>ISuplclienttoserverInterface</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.hwdisplay</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplay</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.hwdisplay.displayengine</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplayEngineWrapper</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -290,6 +299,15 @@
         <version>1.0</version>
         <interface>
             <name>IHWPower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.sensors</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
             <instance>default</instance>
         </interface>
     </hal>
