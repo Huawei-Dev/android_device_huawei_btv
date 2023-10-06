@@ -43,8 +43,6 @@ ro.config.enable_iaware=true
 lockscreen.rot_override=true
 
 # local
-net.tethering.noprovisioning=true
-ro.config.hw_lte_support=true
 gsm.fastdormancy.mode=3
 
 # FRP
@@ -112,7 +110,7 @@ debug.sf.disable_backpressure=1
 ro.vendor.vndk.version=26.0.0
 
 # vowifi
-ro.vendor.config.hw_vowifi=true
+ro.config.hw_vowifi=true
 
 # VR
 ro.vr_display.service=true

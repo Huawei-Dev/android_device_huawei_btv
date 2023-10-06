@@ -33,18 +33,6 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-std::string replaceStrChar(std::string str, const std::string& replace, char ch) {
-
-    std::size_t found = str.find_first_of(replace);
-
-    while (found != std::string::npos) {
-    	str[found] = ch;
-    	found = str.find_first_of(replace, found+1);
-    }
-
-    return str;
-}
-
 void property_override_3x(char const product_prop[], char const system_prop[], char const vendor_prop[], char const value[])
 {
     property_override(product_prop, value);
@@ -70,7 +58,7 @@ void vendor_load_properties()
 {
     int i;
     std::ifstream fin;
-    std::string buf, modem;
+    std::string buf;
 
     fin.open("/sys/firmware/devicetree/base/hisi,boardname");
     while (std::getline(fin, buf, ' '))
@@ -81,18 +69,12 @@ void vendor_load_properties()
     if (buf.find("BTV_DL09") != std::string::npos) {
 	set_model("BTV-DL09");
 	property_override("net.tethering.noprovisioning", "true");
-	property_override("ro.config.hw_volte_on", "true");
-	property_override("ro.vendor.config.hw_vowifi", "true");
-	property_override("ril.modem.balong_nvm_server", "true");
 	property_override("ro.build.description", "BTV-DL09-user 7.0 HUAWEIBEETHOVEN-DL09 C100B311 release-keys");
 	property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/BEETHOVEN/hwbeethoven:7.0/HUAWEIBEETHOVEN-DL09/C100B311:user/release-keys");
     }
     else if (buf.find("BTV_L0J") != std::string::npos) {
 	set_model("BTV-L0J");
 	property_override("net.tethering.noprovisioning", "true");
-	property_override("ro.config.hw_volte_on", "true");
-	property_override("ro.vendor.config.hw_vowifi", "true");
-	property_override("ril.modem.balong_nvm_server", "true");
 	property_override("ro.build.description", "BTV-L0J-user 6.0 HUAWEIBTV-L0J C137B035 release-keys");
 	property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "dtab/BEETHOVEN/d-01J:6.0/HUAWEIBTV-L0J/17053102:user/release-keys");
     }
@@ -129,33 +111,4 @@ void vendor_load_properties()
         	property_override("ro.connectivity.sub_chiptype", "hi1102");
         	property_override("ro.boot.odm.conn.schiptype", "hi1102");
         }
-
-    char modem_id[255];
-    fin.open("/sys/firmware/devicetree/base/hisi,modem_id");
-    std::getline(fin, buf, ' ');
-    fin.close();
-    sprintf(modem_id, "0X%X%X%X%X%X", buf[0], buf[1], buf[2], buf[3], buf[4]);
-
-    fin.open("/proc/cmdline");
-    while (std::getline(fin, buf, ' '))
-        if (buf.find("productid") != std::string::npos)
-            break;
-    fin.close();
-
-    for (i = 0; i < buf.size(); i++) {
-    	if (i > 9) {
-       		modem.push_back(buf[i]);
-    	}
-    }
-
-    modem = replaceStrChar(modem, "x", 'X');
-    modem = replaceStrChar(modem, "a", 'A');
-    modem = replaceStrChar(modem, "b", 'B');
-    modem = replaceStrChar(modem, "c", 'C');
-    modem = replaceStrChar(modem, "d", 'D');
-    modem = replaceStrChar(modem, "e", 'E');
-    modem = replaceStrChar(modem, "f", 'F');
-
-    property_override("ro.modem_id", modem_id);
-    property_override("ro.productid", modem.c_str());
 }

@@ -1,9 +1,0 @@
-on fs
-    wait /vendor/phone.prop
-    start vendor.mploader
-
-service vendor.mploader /vendor/bin/hw/mploader
-    user root
-    group system radio
-    oneshot
-    disabled

@@ -869,50 +869,7 @@ on data_not_ready
 on charger
     import /vendor/etc/init/hw/init.charger.rc
     
-# Start service here
-
-service ril-daemon /vendor/bin/hw/rild
-    disabled
-    class core
-    socket rild stream 660 root radio
-    socket rildm2 stream 660 root radio
-    socket rildm3 stream 660 root radio
-    socket rildi stream 660 root radio
-    socket rildi2 stream 660 root radio
-    socket rildc1 stream 660 radio system
-    socket rildc2 stream 660 radio system
-    socket rildc3 stream 660 radio system
-    
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log readproc system
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-    
-service ril-daemon1 /vendor/bin/hw/rild -c 1
-    disabled
-    class core
-    socket rilds2 stream 660 root radio
-    socket rild-debug1 stream 660 radio system
-    socket rild-balong-test stream 660 radio system
-    user radio
-    group radio cache inet misc audio log readproc wakelock net_raw
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-on property:sys.rilprops_ready=1
-    write /sys/devices/platform/his_modem/modem_sysboot_start 1
-    start ril-daemon
-
-on property:rild.rild1_ready_to_start=true
-    start ril-daemon1
-
-on property:ro.multi.rild=true
-    symlink /dev/socket/rilds2 /dev/socket/rild2
-
-on property:ro.multi.rild=false
-    symlink /dev/socket/rildm2 /dev/socket/rild2
-    symlink /dev/socket/rildm3 /dev/socket/rild3
-
-# Not used in getprop !!!    
+# Start service
 service atcmdserver /vendor/bin/atcmdserver
     class main
     group root system nfc graphics audio camera
