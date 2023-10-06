@@ -910,6 +910,15 @@ service irqbalance /vendor/bin/irqbalance
     disabled
     oneshot
     writepid /dev/cpuset/background/tasks
+    
+service iked /vendor/bin/iked
+    class late_start
+    user root
+    disabled
+    group system
+	
+on property:ro.config.hw_vowifi=true
+    start iked
 
 on property:persist.irqbalance.enable=true
     start irqbalance
