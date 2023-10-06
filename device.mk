@@ -237,7 +237,8 @@ PRODUCT_PACKAGES += \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++.vendor \
+    libpcap.vendor
     
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
