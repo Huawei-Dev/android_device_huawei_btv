@@ -14,6 +14,8 @@
 /vendor/bin/hw/vendor.huawei.hardware.power@1.0-service			u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.sensors@1.0-service			u:object_r:hal_sensors_default_exec:s0
 
+/vendor/bin/hw/mac_nvme						u:object_r:hwmac_exec:s0
+/vendor/bin/hw/mploader						u:object_r:hwmac_exec:s0
 /vendor/bin/atcmdserver							u:object_r:atcmdserver_exec:s0
 /vendor/bin/diagserver								u:object_r:diagserver_exec:s0
 /vendor/bin/gnss_control_hisi							u:object_r:hal_gnss_default_exec:s0

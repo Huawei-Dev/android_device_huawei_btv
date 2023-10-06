@@ -16,7 +16,6 @@ cc_binary {
         "-Wextra",
         "-Werror",
     ],
-    init_rc: ["mac_nvme.rc"],
     relative_install_path: "hw",
 
     vendor: true,

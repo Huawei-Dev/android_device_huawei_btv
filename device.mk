@@ -266,7 +266,20 @@ PRODUCT_PACKAGES += \
 # Vr
 PRODUCT_PACKAGES += \
     android.hardware.vr@1.0-impl \
-    android.hardware.vr@1.0-service    
+    android.hardware.vr@1.0-service
+
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.2 \
+    android.hardware.wifi.supplicant@1.2 \
+    android.hardware.wifi.hostapd@1.1 \
+    android.hardware.wifi.offload@1.0 \
+    libkeystore-engine-wifi-hidl \
+    libkeystore-wifi-hidl
+
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    wificond
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.oem_unlock_supported=1 \

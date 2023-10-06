@@ -299,6 +299,7 @@ on post-fs
 on post-fs-data
     setprop sys.userdata_is_ready 1
     start teecd
+    start vendor.mac_nvme
     setprop persist.sys.kmemleak.debug 0
     
     mkdir /splash2/sim 0770 root system
@@ -870,6 +871,12 @@ on charger
     import /vendor/etc/init/hw/init.charger.rc
     
 # Start service
+service vendor.mac_nvme /vendor/bin/hw/mac_nvme
+    user root
+    group bluetooth system wifi
+    oneshot
+    disabled
+
 service atcmdserver /vendor/bin/atcmdserver
     class main
     group root system nfc graphics audio camera
@@ -891,7 +898,6 @@ service teecd /vendor/bin/teecd
     user root
     group root readproc
     
-# Oreo
 service hisi-sh /vendor/bin/init.hisi.sh
     class late_start
     user root
