@@ -1,0 +1,257 @@
+<?xml version="2.0" encoding="utf-8"?>
+<!-- config value
+ * Copyright (C) 2015 Huawei Inc.
+ *
+
+    TYPE        :   AVALIABLE_VALUE
+    cmd_type    :   0/1/2/3 (NOOP/BOOST/STOP_BOOST/SET)
+    cpu_l       :   480000      807000      1018000     1306000     1517000     1805000
+    cpu_b       :   480000      807000      1210000     1517000     1805000     2016000     2304000
+    gpu         :   120000000   240000000   360000000   480000000   650000000   800000000   900000000
+    ddr         :   120000000   240000000   360000000   533000000   667000000   960000000   1333000000
+    hmp         :   0~1024
+    hmp_boost   :   0,1
+    ipa         :
+    bl_sch      :   0,1
+
+    notes:
+    1. duration time by the millisecond
+
+-->
+
+<!-- perf_event id
+    0  - boot_complete
+    1  - interaction
+    2  - vsync_on
+    3  - vsync_off
+    4  - app_start
+    5  - window_switch
+    6  - rotating
+    7  - animation
+    8  - list_fling
+    9  - screen_on
+    10 - screen_off
+    11 - statusbar
+    12 - luckymoney
+-->
+
+<!-- perf resource id
+    0 - cpu_little
+    1 - cpu_big
+    2 - gpu
+    3 - ddr
+    4 - hmp
+    5 - hmp_boost
+    6 - ipa
+    7 - bl_sch
+-->
+
+<boost_policy>
+    <!--perf_event name="sample" id="5">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <freq_min>1805000</freq_min>
+            <freq_max>1805000</freq_max>
+        </perf_res>
+        <perf_res name="hmp" id="4">
+            <cmd_type>0</cmd_type>
+            <duration>1000</duration>
+            <thres_up>300</thres_up>
+            <thres_down>150</thres_down>
+        </perf_res>
+    </perf_event-->
+
+    <perf_event name="app_start" id="4">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>1500</duration>
+            <freq_min>1805000</freq_min>
+            <freq_max>1805000</freq_max>
+        </perf_res>
+        <perf_res name="cpu_big" id="1">
+            <cmd_type>1</cmd_type>
+            <duration>1500</duration>
+            <freq_min>2304000</freq_min>
+            <freq_max>2304000</freq_max>
+        </perf_res>
+        <perf_res name="gpu" id="2">
+            <cmd_type>1</cmd_type>
+            <duration>1500</duration>
+            <freq_min>650000000</freq_min>
+            <freq_max>650000000</freq_max>
+        </perf_res>
+        <perf_res name="ddr" id="3">
+            <cmd_type>1</cmd_type>
+            <duration>1500</duration>
+            <freq_min>1333000000</freq_min>
+            <freq_max>1333000000</freq_max>
+        </perf_res>
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>1500</duration>
+            <topapp>30</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>30</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>30</vip>
+        </perf_res>
+    </perf_event>
+    <perf_event name="window_switch" id="5">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <freq_min>1805000</freq_min>
+            <freq_max>1805000</freq_max>
+        </perf_res>
+        <perf_res name="cpu_big" id="1">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <freq_min>2016000</freq_min>
+            <freq_max>2016000</freq_max>
+        </perf_res>
+        <perf_res name="gpu" id="2">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <freq_min>650000000</freq_min>
+            <freq_max>650000000</freq_max>
+        </perf_res>
+        <perf_res name="ddr" id="3">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <freq_min>960000000</freq_min>
+            <freq_max>960000000</freq_max>
+        </perf_res>
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>500</duration>
+            <topapp>30</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>30</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>30</vip>
+        </perf_res>
+    </perf_event>
+    <perf_event name="rotating" id="6">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>1000</duration>
+            <freq_min>1805000</freq_min>
+            <freq_max>1805000</freq_max>
+        </perf_res>
+        <perf_res name="cpu_big" id="1">
+            <cmd_type>1</cmd_type>
+            <duration>1000</duration>
+            <freq_min>2016000</freq_min>
+            <freq_max>2016000</freq_max>
+        </perf_res>
+        <perf_res name="gpu" id="2">
+            <cmd_type>1</cmd_type>
+            <duration>1000</duration>
+            <freq_min>650000000</freq_min>
+            <freq_max>650000000</freq_max>
+        </perf_res>
+        <perf_res name="ddr" id="3">
+            <cmd_type>1</cmd_type>
+            <duration>1000</duration>
+            <freq_min>960000000</freq_min>
+            <freq_max>960000000</freq_max>
+        </perf_res>
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>1000</duration>
+            <topapp>40</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>40</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>40</vip>
+        </perf_res>
+    </perf_event>
+    <perf_event name="list_fling" id="8">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>5000</duration>
+            <freq_min>1306000</freq_min>
+            <freq_max>1306000</freq_max>
+        </perf_res>
+        <perf_res name="cpu_big" id="1">
+            <cmd_type>0</cmd_type>
+            <duration>0</duration>
+            <freq_min>0</freq_min>
+            <freq_max>0</freq_max>
+        </perf_res>
+        <perf_res name="gpu" id="2">
+            <cmd_type>0</cmd_type>
+            <duration>0</duration>
+            <freq_min>0</freq_min>
+            <freq_max>0</freq_max>
+        </perf_res>
+        <perf_res name="ddr" id="3">
+            <cmd_type>0</cmd_type>
+            <duration>0</duration>
+            <freq_min>0</freq_min>
+            <freq_max>0</freq_max>
+        </perf_res>
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>5000</duration>
+            <topapp>10</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>0</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>0</vip>
+        </perf_res>
+    </perf_event>
+    <perf_event name="touchmove" id="13">
+        <perf_res name="cpu_little" id="0">
+            <cmd_type>1</cmd_type>
+            <duration>80</duration>
+            <freq_min>1306000</freq_min>
+            <freq_max>1306000</freq_max>
+        </perf_res>
+        <perf_res name="cpu_big" id="1">
+            <cmd_type>1</cmd_type>
+            <duration>80</duration>
+            <freq_min>1210000</freq_min>
+            <freq_max>1210000</freq_max>
+        </perf_res>
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>80</duration>
+            <topapp>40</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>40</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>40</vip>
+        </perf_res>
+    </perf_event>
+    <perf_event name="preappstart" id="16">
+        <perf_res name="schedule" id="11">
+            <cmd_type>1</cmd_type>
+            <duration>150</duration>
+            <topapp>40</topapp>
+            <boostgroup>0</boostgroup>
+            <fg>40</fg>
+            <root>0</root>
+            <bg>0</bg>
+            <keybg>0</keybg>
+            <sysbg>0</sysbg>
+            <vip>40</vip>
+        </perf_res>
+    </perf_event>
+</boost_policy>

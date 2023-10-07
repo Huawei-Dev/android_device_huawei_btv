@@ -1,0 +1,154 @@
+<?xml version="2.0" encoding="utf-8"?>
+<!-- config value
+ * Copyright (C) 2015 Huawei Inc.
+ *
+-->
+
+<config>
+    <available_bound>
+        <cpu_little>
+            <freq_min>480000</freq_min>
+            <freq_max>1805000</freq_max>
+        </cpu_little>
+        <cpu_big>
+            <freq_min>480000</freq_min>
+            <freq_max>2304000</freq_max>
+        </cpu_big>
+        <gpu>
+            <freq_min>120000000</freq_min>
+            <freq_max>900000000</freq_max>
+        </gpu>
+        <ddr>
+            <freq_min>120000000</freq_min>
+            <freq_max>1333000000</freq_max>
+        </ddr>
+        <hmp>
+            <thres_min>0</thres_min>
+            <thres_max>1024</thres_max>
+        </hmp>
+        <eas>
+            <min>1</min>
+            <max>199</max>
+        </eas>
+        <duration>
+            <min>20</min>
+            <max>10000</max>
+        </duration>
+    </available_bound>
+    <base_value>
+        <cpu_little>
+            <freq_min>480000</freq_min>
+            <freq_max>1805000</freq_max>
+        </cpu_little>
+        <cpu_big>
+            <freq_min>807000</freq_min>
+            <freq_max>2304000</freq_max>
+        </cpu_big>
+        <gpu>
+            <freq_min>360000000</freq_min>
+            <freq_max>900000000</freq_max>
+        </gpu>
+        <ddr>
+            <freq_min>120000000</freq_min>
+            <freq_max>1333000000</freq_max>
+        </ddr>
+        <hmp>
+            <thres_up>700</thres_up>
+            <thres_down>384</thres_down>
+        </hmp>
+        <ipa>
+            <switch_temp>55000</switch_temp>
+            <control_temp>80000</control_temp>
+            <power>2500</power>
+        </ipa>
+        <bl_sch>
+            <fork_on_big>1</fork_on_big>
+            <sched_boost>0</sched_boost>
+            <cpu_boost>0</cpu_boost>
+            <switch_cpu_idle_disable>0</switch_cpu_idle_disable>
+        </bl_sch>
+        <eas>
+            <group name="topapp">
+                <base_value>100</base_value>
+            </group>
+            <group name="boostgroup">
+                <base_value>100</base_value>
+            </group>
+            <group name="fg">
+                <base_value>100</base_value>
+            </group>
+            <group name="root">
+                <base_value>100</base_value>
+            </group>
+            <group name="bg">
+                <base_value>100</base_value>
+            </group>
+            <group name="keybg">
+                <base_value>100</base_value>
+            </group>
+            <group name="sysbg">
+                <base_value>100</base_value>
+            </group>
+            <group name="vip">
+                <base_value>100</base_value>
+            </group>
+        </eas>
+    </base_value>
+    <other_value>
+        <probe_value>
+             <event_probe_cpu_b_min_freq>1805000</event_probe_cpu_b_min_freq>
+             <event_probe_gpu_min_freq>650000000</event_probe_gpu_min_freq>
+        </probe_value>
+    </other_value>
+    <sched_level>
+        <level name="extreme_power_saving" id="-20">
+            <eas_value>1</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>1024</thres_up>
+            <thres_down>912</thres_down>
+            <hmp_boost>0</hmp_boost>
+        </level>
+        <level name="power_saving" id="-10">
+            <eas_value>50</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>912</thres_up>
+            <thres_down>480</thres_down>
+            <hmp_boost>0</hmp_boost>
+        </level>
+        <level name="normal" id="0">
+            <eas_value>100</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>700</thres_up>
+            <thres_down>384</thres_down>
+            <hmp_boost>0</hmp_boost>
+        </level>
+        <level name="performance_level_0" id="10">
+            <eas_value>112</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>680</thres_up>
+            <thres_down>256</thres_down>
+            <hmp_boost>0</hmp_boost>
+        </level>
+        <level name="performance_level_5" id="20">
+            <eas_value>120</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>512</thres_up>
+            <thres_down>256</thres_down>
+            <hmp_boost>0</hmp_boost>
+        </level>
+        <level name="performance_level_10" id="30">
+            <eas_value>126</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>480</thres_up>
+            <thres_down>256</thres_down>
+            <hmp_boost>1</hmp_boost>
+        </level>
+        <level name="high_performance" id="40">
+            <eas_value>140</eas_value>
+            <eas_boost>0</eas_boost>
+            <thres_up>300</thres_up>
+            <thres_down>150</thres_down>
+            <hmp_boost>1</hmp_boost>
+        </level>
+    </sched_level>
+ </config>

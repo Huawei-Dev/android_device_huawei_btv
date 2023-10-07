@@ -343,6 +343,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.huawei.hardware.iawareperf</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUniPerf</name>
+            <instance>uniperf</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.huawei.hardware.iked</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -358,6 +367,15 @@
         <interface>
             <name>IModemlogcat</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.perfgenius</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPerfGenius</name>
+            <instance>perfgenius</instance>
         </interface>
     </hal>
     <hal format="hidl">
