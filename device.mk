@@ -163,6 +163,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service
     
+PRODUCT_PACKAGES += \
+    libmockcasplugin
+    
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/prebuilts/topazhp.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/topazhp.cfg \
     $(LOCAL_PATH)/prebuilts/vdec_atlas.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/vdec_atlas.cfg
@@ -239,6 +242,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common@1.0_types.vendor \
     android.hardware.radio@1.0_types.vendor \
+    libtinyxml2_shim.vendor \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
