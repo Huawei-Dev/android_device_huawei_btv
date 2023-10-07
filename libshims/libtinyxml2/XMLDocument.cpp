@@ -12,11 +12,6 @@ namespace tinyxml2 {
 extern "C" {
 void* _ZN8tinyxml211XMLDocumentC1Eb(XMLDocument* thisptr, bool processEntities) {
     return new (thisptr) XMLDocument(processEntities, PRESERVE_WHITESPACE);
-}
-
-XMLError _ZN8tinyxml211XMLDocument8SaveFileEPKc(XMLDocument* thisptr, const char* filename) {
-    return thisptr->SaveFile(filename);
-}
-}
-
+	}
+    }
 }  // namespace tinyxml2
