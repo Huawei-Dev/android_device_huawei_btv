@@ -931,6 +931,11 @@ on property:sys.userdata_is_ready=1
 on property:sys.boot_completed=1
     swapon_all /vendor/etc/fstab.hi3650
     
+service CameraDaemon /vendor/bin/CameraDaemon hi3650 BTV
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
+    
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
