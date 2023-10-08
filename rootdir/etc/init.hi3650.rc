@@ -943,6 +943,11 @@ on property:ro.boot.ddrsize=4
 on property:sys.userdata_is_ready=1
     start thermal-daemon
     
+service CameraDaemon /vendor/bin/CameraDaemon hi3650 BTV
+    class main
+    user media
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
+    
 service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override
     class hal
