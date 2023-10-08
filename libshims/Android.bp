@@ -55,6 +55,20 @@ cc_library_shared {
 cc_library_shared {
     name: "libui_shim",
     srcs: [
+        "libui/GraphicBuffer.cpp",
+        "libui/GraphicBufferMapper.cpp",
+    ],
+    shared_libs: [
+        "libui",
+        "libutils",
+    ],
+    product_specific: true,
+    vendor_available: true,
+}
+
+cc_library_shared {
+    name: "libcamera_shim",
+    srcs: [
         "libui/Fence.cpp",
         "libui/GraphicBuffer.cpp",
         "libui/GraphicBufferMapper.cpp",
@@ -68,7 +82,7 @@ cc_library_shared {
 }
 
 cc_library_shared {
-    name: "guivnd",
+    name: "libguv",
     shared_libs: ["libgui_vendor"],
     vendor: true,
 }
