@@ -922,6 +922,11 @@ service iked /vendor/bin/iked
     user root
     disabled
     group system
+    
+service thermal-daemon /vendor/bin/thermal-daemon
+    class main
+    user system
+    group system
 	
 on property:ro.config.hw_vowifi=true
     start iked
@@ -934,6 +939,9 @@ on property:ro.boot.ddrsize=3
     
 on property:ro.boot.ddrsize=4
     swapon_all /vendor/etc/fstab.zram2240m
+    
+on property:sys.userdata_is_ready=1
+    start thermal-daemon
     
 service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     override
