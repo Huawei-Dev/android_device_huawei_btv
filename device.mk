@@ -189,11 +189,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2-impl \
     android.hardware.power.stats@1.0-service.mock
     
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/perfgenius_boost_policy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_boost_policy.xml \
-    $(LOCAL_PATH)/prebuilts/perfgenius_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_config.xml \
-    $(LOCAL_PATH)/prebuilts/perfgenius_mode_policy.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perfgenius_mode_policy.xml
-    
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi3650 \

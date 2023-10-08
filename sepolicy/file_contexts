@@ -9,7 +9,6 @@
 /vendor/bin/hw/vendor.huawei.hardware.hwdisplay.displayengine@1.0-service	u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.hwdisplay@1.0-service			u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.iawareperf@1.0-service			u:object_r:hal_power_default_exec:s0
-/vendor/bin/hw/vendor.huawei.hardware.perfgenius@1.0-service			u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.power@1.0-service			u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor.huawei.hardware.sensors@1.0-service			u:object_r:hal_sensors_default_exec:s0
 
