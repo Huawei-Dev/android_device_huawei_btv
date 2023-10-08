@@ -9,6 +9,9 @@ persist.media.lowlatency.enable=false
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 persist.bt.enableAptXHD=true
 
+# Camera
+persist.sys.camera.huawei=true
+
 # CPU
 persist.sys.cpuset.enable=1
 persist.sys.cpuset.subswitch=250

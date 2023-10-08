@@ -97,6 +97,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
+    
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@1.0-impl
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -246,6 +251,7 @@ PRODUCT_PACKAGES += \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
+    libdng_sdk.vendor \
     libstdc++.vendor \
     libpcap.vendor
     
