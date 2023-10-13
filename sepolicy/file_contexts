@@ -55,6 +55,7 @@
 /dev/dsm									u:object_r:dmd_device:s0
 
 # Rootfs
+/produce(/.*)?									u:object_r:system_file:s0
 /splash2(/.*)?         							u:object_r:splash2_file:s0
 /3rdmodem(/.*)?								u:object_r:modem_log_file:s0
 /3rdmodemnvm(/.*)?								u:object_r:modem_log_file:s0
