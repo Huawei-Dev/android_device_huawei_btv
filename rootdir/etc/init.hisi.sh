@@ -12,3 +12,9 @@ ln -sf /system/apex/com.android.runtime.release/lib64/libprofile.so /system/lib6
 ln -sf /system/apex/com.android.runtime.release/lib64/libsigchain.so /system/lib64/vndk-29/libsigchain.so
 mount -o remount,ro /
 fi
+
+if [ ! -f /data/vendor/bluedroid/macbt ]; then
+mount -o remount,rw /vendor
+exec /vendor/bin/hw/mac_nvme
+mount -o remount,ro /vendor
+fi
