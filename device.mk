@@ -293,6 +293,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.usb.configfs=1 \
     sys.usb.controller=ff100000.dwc3
     
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.recovery_update=false
+    
 PRODUCT_GMS_CLIENTID_BASE := android-huawei
 
 # Permissions
