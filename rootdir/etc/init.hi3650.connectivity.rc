@@ -1,9 +1,6 @@
 on post-fs-data
     chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
     
-    chown system system /dev/ttyAMA3
-    chmod 0660 /dev/ttyAMA3
-    
     mkdir /data/vendor/wifi 0771 wifi wifi
     mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
     mkdir /data/vendor/wifi/hostapd/sockets 0770 wifi wifi

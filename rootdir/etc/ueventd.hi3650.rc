@@ -9,6 +9,8 @@ firmware_directories /vendor/firmware/
 /dev/memory_throughput_up_threshold		0660 system system
 /dev/imgsysbrg_vdec0    			0660 system camera
 
+/dev/ttyAMA3					0660 system system
+
 /dev/ttySPI0 					0660 root radio
 /dev/ttySPI1 					0660 root system
 /dev/ttySPI2 					0660 root radio
