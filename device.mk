@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/privapp-permissions-com.android.supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.android.supl.xml \
-    $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+    $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
 
 # Health
 PRODUCT_PACKAGES += \
