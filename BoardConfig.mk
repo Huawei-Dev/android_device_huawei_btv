@@ -136,9 +136,6 @@ BOARD_ROOT_EXTRA_SYMLINKS += \
 	/vendor/odm:/odm \
 	/vendor/odm/hw_odm:/hw_odm
 	
-# Malloc
-MALLOC_SVELTE := true
-	
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
 
