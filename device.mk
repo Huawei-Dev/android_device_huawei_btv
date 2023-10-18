@@ -34,10 +34,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/cfg_btv_hisi.ini:$(TARGET_COPY_OUT_VENDOR)/etc/cfg_btv_hisi.ini \
     $(LOCAL_PATH)/prebuilts/cfg_btv_wifi_only_hisi.ini:$(TARGET_COPY_OUT_VENDOR)/etc/cfg_btv_wifi_only_hisi.ini
     
-# APEX
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/ld.config.29.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/ld.config.29.txt
-    
 # AAPT conf
 PRODUCT_AAPT_CONFIG := normal 
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
