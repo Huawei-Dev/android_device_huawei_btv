@@ -1,3 +1,10 @@
 subdirs = [
+    "init",
+    "libhidl",
+    "libshims",
+    "libxcollie",
+    "lights",
+    "mac_nvme",
+    "mploader",    
     "touch",
 ]
