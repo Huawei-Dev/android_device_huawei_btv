@@ -4,7 +4,6 @@ import /vendor/etc/init/hw/init.hi3650.lte.rc
 import /vendor/etc/init/hw/init.hi3650.power.rc
 import /vendor/etc/init/hw/init.hi3650.usb.configfs.rc
 import /vendor/etc/init/hw/init.hi3650.usb.rc
-import /vendor/etc/init/hw/init.safailnet.rc
 import /vendor/etc/init/hw/init.services.rc
 
 on early-init
@@ -903,18 +902,6 @@ service teecd /vendor/bin/teecd
     class core
     user root
     group root readproc
-    
-service hisi-sh /vendor/bin/init.hisi.sh
-    class late_start
-    user root
-    group root system
-    oneshot
-    
-service hwo-sh /system/bin/init.hwo.sh
-    class late_start
-    user root
-    group root system
-    oneshot
     
 service irqbalance /vendor/bin/irqbalance
     user root
