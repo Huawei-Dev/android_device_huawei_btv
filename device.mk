@@ -209,7 +209,7 @@ PRODUCT_PACKAGES += \
     ueventd.hi3650.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi3650
+    $(LOCAL_PATH)/rootdir/fstab.hi3650:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi3650
     
 # RIL
 PRODUCT_PACKAGES += \
