@@ -41,11 +41,6 @@ TARGET_OTA_ASSERT_DEVICE := hi3650,btv
 # Android Q
 BUILD_BROKEN_DUP_RULES := true
 
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
-USE_XML_AUDIO_POLICY_CONF := 1
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := hi3650
 TARGET_NO_BOOTLOADER := true
@@ -55,37 +50,14 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-
 # Camera
 MALLOC_SVELTE_FOR_LIBC32 := true
 
-# Charger 
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
-
-# Extended Filesystem Support
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/prebuilts/config.fs
-TARGET_EXFAT_DRIVER := sdfat
-
-# FONTS
-EXTENDED_FONT_FOOTPRINT := true
-    
 # Display
-TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 420
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
-TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
 # Encryption
 TARGET_PROVIDES_KEYMASTER := true
-
-# GPS
-USE_DEVICE_SPECIFIC_GPS := true
-TARGET_NO_RPC := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/prebuilts/manifest.xml
@@ -131,14 +103,7 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	modem_log \
 	mnvm2:0 \
 	produce
-    
-BOARD_ROOT_EXTRA_SYMLINKS += \
-	/vendor/odm:/odm \
-	/vendor/odm/hw_odm:/hw_odm
 	
-# Power
-TARGET_HAS_LEGACY_POWER_STATS := true
-
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
@@ -170,17 +135,7 @@ CONFIG_DRIVER_NL80211		:= y
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # Vendor Security patch level
-VENDOR_SECURITY_PATCH := 2022-08-05
-
-# VNDK
-BOARD_VNDK_VERSION := current
-PRODUCT_USE_VNDK_OVERRIDE := true
-BOARD_AVB_ENABLE := false
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
-
-# Thermal
-TARGET_USES_CUSTOM_THERMAL := true
+VENDOR_SECURITY_PATCH := 2023-10-06
 
 # inherit from the proprietary version
 -include vendor/huawei/btv/BoardConfigVendor.mk
