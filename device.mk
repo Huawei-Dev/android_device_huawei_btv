@@ -96,9 +96,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
     
-# Dynamic Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
