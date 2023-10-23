@@ -2,7 +2,6 @@ import /vendor/etc/init/hw/init.hi3650.connectivity.rc
 import /vendor/etc/init/hw/init.hi3650.hisi.rc
 import /vendor/etc/init/hw/init.hi3650.lte.rc
 import /vendor/etc/init/hw/init.hi3650.power.rc
-import /vendor/etc/init/hw/init.hi3650.usb.configfs.rc
 import /vendor/etc/init/hw/init.hi3650.usb.rc
 import /vendor/etc/init/hw/init.services.rc
 

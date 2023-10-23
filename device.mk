@@ -194,7 +194,6 @@ PRODUCT_PACKAGES += \
     init.hi3650.lte.rc \
     init.hi3650.power.rc \
     init.hi3650.rc \
-    init.hi3650.usb.configfs.rc \
     init.hi3650.usb.rc \
     init.recovery.hi3650.rc \
     init.services.rc \
