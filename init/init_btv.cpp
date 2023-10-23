@@ -44,9 +44,11 @@ void property_override_4x(char const product_prop[], char const system_prop[], c
 }
 
 static void set_model(const char *model) {
-    property_override("ro.hw.oemName", model);
-    property_override("ro.build.product", model);
-    property_override_3x("ro.product.model", "ro.product.system.model", "ro.product.vendor.model", model);
+    property_override_3x("ro.hw.oemName", "ro.lineage.device", "ro.build.product", model);
+    property_override_3x("ro.product.name", "ro.product.odm.name", "ro.product.product.name", model);
+    property_override_3x("ro.product.system.name", "ro.product.system_ext.name", "ro.product.vendor.name", model);
+    property_override_3x("ro.product.device", "ro.product.odm.device", "ro.product.product.device", model);
+    property_override_3x("ro.product.system.device", "ro.product.system_ext.device", "ro.product.vendor.device", model);
 }
 
 void vendor_load_properties()
@@ -66,12 +68,15 @@ void vendor_load_properties()
 	property_override("net.tethering.noprovisioning", "true");
 	property_override("ro.build.description", "BTV-DL09-user 7.0 HUAWEIBEETHOVEN-DL09 C100B311 release-keys");
 	property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/BEETHOVEN/hwbeethoven:7.0/HUAWEIBEETHOVEN-DL09/C100B311:user/release-keys");
+	property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/BEETHOVEN/hwbeethoven:7.0/HUAWEIBEETHOVEN-DL09/C100B311:user/release-keys");
+	
     }
     else if (buf.find("BTV_L0J") != std::string::npos) {
 	set_model("BTV-L0J");
 	property_override("net.tethering.noprovisioning", "true");
 	property_override("ro.build.description", "BTV-L0J-user 7.0 HUAWEIBTV-L0J C137B365 release-keys");
 	property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "dtab/BEETHOVEN/d-01J:7.0/HUAWEIBTV-L0J/19021102:user/release-keys");
+	property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "dtab/BEETHOVEN/d-01J:7.0/HUAWEIBTV-L0J/19021102:user/release-keys");
     }
     else if (buf.find("BTV_W09") != std::string::npos) {
 	set_model("BTV-W09");
@@ -79,31 +84,30 @@ void vendor_load_properties()
 	property_override("ro.carrier", "wifi-only");
 	property_override("ro.build.description", "BTV-W09-user 7.0 HUAWEIBEETHOVEN-W09 C100B308 release-keys");
 	property_override_4x("ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "ro.odm.build.fingerprint", "ro.bootimage.build.fingerprint", "HUAWEI/BEETHOVEN/hwbeethoven:7.0/HUAWEIBEETHOVEN-W09/C100B308:user/release-keys");
+	property_override_3x("ro.build.fingerprint", "ro.product.build.fingerprint", "ro.system_ext.build.fingerprint",  "HUAWEI/BEETHOVEN/hwbeethoven:7.0/HUAWEIBEETHOVEN-W09/C100B308:user/release-keys");
     }
     else {
 	property_override("ro.product.model", "UNKNOWN");
     }
     
     fin.open("/proc/connectivity/chiptype");
-    while (std::getline(fin, buf, ' '))
-    	if (buf.find("hisi") != std::string::npos)
-            break;
-    fin.close();
-
-    if (buf.find("hisi") != std::string::npos) {
+    while (std::getline(fin, buf, ' ')) {
+    	if (buf.find("hisi") != std::string::npos) {
         	property_override("ro.connectivity.chiptype", "hisi");
         	property_override("is_hisi_connectivity_chip", "1");
     		property_override("ro.boot.odm.conn.chiptype", "hisi");
-    	}
-    
-    fin.open("/sys/firmware/devicetree/base/hi1102/name");
-    while (std::getline(fin, buf, ' '))
-        if (buf.find("hi1102") != std::string::npos)
+    		}
             break;
+       }
     fin.close();
     
-    if (buf.find("hi1102") != std::string::npos) {
+    fin.open("/sys/firmware/devicetree/base/hi1102/name");
+    while (std::getline(fin, buf, ' ')) {
+        if (buf.find("hi1102") != std::string::npos) {
         	property_override("ro.connectivity.sub_chiptype", "hi1102");
         	property_override("ro.boot.odm.conn.schiptype", "hi1102");
-        }
+        	}
+            break;
+       }
+    fin.close();
 }
