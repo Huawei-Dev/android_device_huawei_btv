@@ -108,6 +108,9 @@ BOARD_ROOT_EXTRA_FOLDERS :=  \
 	modem_log \
 	mnvm2:0 \
 	produce
+
+BOARD_ROOT_EXTRA_SYMLINKS += \
+	/vendor/odm/hw_odm:/hw_odm
 	
 # Props
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
