@@ -102,13 +102,17 @@ persist.sys.adoptable_fbe=true
 # Sensors
 ro.config.hw_sensorhub=true
 
+# SurfaceFlinger
+ro.surface_flinger.running_without_sync_framework=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+debug.sf.disable_client_composition_cache=1
+debug.renderengine.backend=threaded
+service.sf.prime_shader_cache=0
+debug.sf.enable_gl_backpressure=1
+
 # wifi
 wifi.interface=wlan0
 wifi.direct.interface=p2p-dev-wlan0
-
-# Q
-debug.sf.latch_unsignaled = 1
-debug.sf.enable_gl_backpressure=1
 
 # vndk
 ro.vendor.vndk.version=26.0.0
