@@ -124,8 +124,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
     
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service
+    android.hardware.gnss@1.0-impl
 
 # Health
 PRODUCT_PACKAGES += \
