@@ -23,7 +23,6 @@
 /vendor/bin/gnss_engine_hisi							u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/gnss_supl20clientd_hisi						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/hivwserver								u:object_r:hivwserver_exec:s0
-/vendor/bin/hostapd_hisi							u:object_r:hal_wifi_hostapd_default_exec:s0
 /vendor/bin/iked									u:object_r:iked_exec:s0
 /vendor/bin/oam_hisi								u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/octty								u:object_r:hal_gnss_default_exec:s0
@@ -31,7 +30,6 @@
 /vendor/bin/start_connectivity_hisi						u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/teecd								u:object_r:tee_exec:s0
 /vendor/bin/thermal-daemon						u:object_r:thermal-daemon_exec:s0
-/vendor/bin/wpa_supplicant_hisi						u:object_r:hal_wifi_supplicant_default_exec:s0
 
 /vendor/xbin/gnss_watchlssd_thirdparty					u:object_r:hal_gnss_default_exec:s0
 
@@ -69,4 +67,4 @@
 /hw_odm(/.*)?          							u:object_r:rootfs:s0
 
 # Touch
-/vendor/bin/hw/vendor.lineage.touch@1.0-service.huawei_hi3650		u:object_r:hal_lineage_touch_default_exec:s0
+/vendor/bin/hw/vendor.lineage.touch@1.0-service.hi3650		u:object_r:hal_lineage_touch_default_exec:s0
