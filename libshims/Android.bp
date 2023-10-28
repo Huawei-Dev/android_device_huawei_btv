@@ -6,7 +6,7 @@
 
 cc_library_shared {
     name: "liblog_vendor",
-    srcs: ["log.cpp"],
+    srcs: ["libshim_log.cpp"],
     shared_libs: ["liblog"],
     vendor: true,
 }
@@ -33,11 +33,4 @@ cc_library_shared {
     shared_libs: ["android.hardware.radio@1.0"],
     product_specific: true,
     vendor_available: true,
-}
-
-cc_library_shared {
-    name: "libshim_log",
-    srcs: ["libshim_log.cpp"],
-    shared_libs: ["liblog"],
-    vendor: true,
 }
