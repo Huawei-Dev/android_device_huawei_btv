@@ -1,6 +1,8 @@
-on boot
-    chown root shell /system/etc/init.d/*
-    chmod 0755 /system/etc/init.d/*
+on fs && property:ro.product.device=BTV_L0J
+    import /vendor/etc/init/hw/init.hi3650.lte.rc
+    
+on fs && property:ro.product.device=BTV-DL09
+    import /vendor/etc/init/hw/init.hi3650.lte.rc
 
 on property:persist.sys.huawei.debug.on=0
     chown system system /sys/class/sensors/sensorhub_dump
@@ -31,6 +33,3 @@ on property:persist.sys.fingersense=1
 on property:persist.sys.fingersense=0
     write /sys/devices/platform/huawei_sensor/set_fingersense_enable 0
     write /sys/devices/platform/huawei_touch/roi_enable 0
-    
-on property:ril.modem.balong_nvm_server=true
-    import /vendor/etc/init/hw/init.hi3650.lte.rc
