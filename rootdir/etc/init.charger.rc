@@ -40,11 +40,13 @@ service ueventd /sbin/hw_ueventd
     critical
     seclabel u:r:ueventd:s0
 
-service charger /sbin/hw_charger -p
+service charger /vendor/bin/hw_charger -p
+    override
     class charger
-    critical
-    seclabel u:r:charger:s0
+    user root
+    group root system shell graphics input wakelock
     capabilities SYS_BOOT
+    seclabel u:r:charger:s0
 
 on property:vold.decrypt=trigger_default_encryption
     start defaultcrypto
