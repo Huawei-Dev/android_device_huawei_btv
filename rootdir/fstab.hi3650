@@ -22,5 +22,6 @@
 /devices/platform/hi_mci.1/mmc_host/mmc1/*            	auto                	auto	defaults                                      					voldmanaged=sdcard:auto,encryptable=userdata
 /devices/platform/ff200000.hisi_usb/ff100000.dwc3/*   	auto          		auto	defaults                								voldmanaged=usbotg:auto
 
+/dev/block/zram0             								none         		swap    	defaults     										zramsize=50%,max_comp_streams=8,zram_loopback_size=512M
 
 

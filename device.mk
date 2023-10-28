@@ -184,8 +184,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.hi3650 \
     fstab.modem \
-    fstab.zram1536m \
-    fstab.zram2240m \
     init.charger.rc \
     init.chip.charger.rc \
     init.hi3650.connectivity.rc \
