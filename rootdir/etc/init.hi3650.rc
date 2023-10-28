@@ -248,6 +248,8 @@ on fs
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
 
     mount_all /vendor/etc/fstab.hi3650 --early
+    
+    start vendor.mac_nvme
 
     restorecon /splash2
 
@@ -303,7 +305,7 @@ on post-fs
 on post-fs-data
     setprop sys.userdata_is_ready 1
     start teecd
-    start vendor.mac_nvme
+
     setprop persist.sys.kmemleak.debug 0
     
     mkdir /splash2/sim 0770 root system
