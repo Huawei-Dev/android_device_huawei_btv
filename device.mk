@@ -188,7 +188,6 @@ PRODUCT_PACKAGES += \
     fstab.zram2240m \
     init.charger.rc \
     init.chip.charger.rc \
-    init.chip.usb.rc \
     init.hi3650.connectivity.rc \
     init.hi3650.hisi.rc \
     init.hi3650.lte.rc \

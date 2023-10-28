@@ -1,3 +1,7 @@
+on boot
+    chown system system /sys/devices/platform/ff200000.hisi_usb/plugusb
+    chmod 0660 /sys/devices/platform/ff200000.hisi_usb/plugusb
+
 on charger
     mount_all /vendor/etc/fstab.hi3650
     start vold

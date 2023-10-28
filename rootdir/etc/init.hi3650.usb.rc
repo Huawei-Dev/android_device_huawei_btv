@@ -2,7 +2,6 @@
 #
 # USB configuration common for hisi devices
 #
-import /vendor/etc/init/hw/init.chip.usb.rc
 
 on init
     mount configfs none /config
@@ -56,6 +55,8 @@ on init
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=1000,rmode=0770,fmode=0660
 
 on boot
+    chown system system /sys/devices/platform/ff200000.hisi_usb/plugusb
+    chmod 0660 /sys/devices/platform/ff200000.hisi_usb/plugusb
     setprop sys.usb.configfs 1
 
 on property:sys.usb.configfs=1

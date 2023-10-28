@@ -1,5 +1,4 @@
 import /vendor/etc/init/hw/init.hi3650.usb.rc
-import /vendor/etc/init/hw/init.hi3650.usb.configfs.rc
 import /vendor/etc/init/hw/init.chip.charger.rc
 
 on early-init
