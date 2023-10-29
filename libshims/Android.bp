@@ -9,7 +9,8 @@ cc_library_shared {
     srcs: ["libshim_log.cpp"],
     shared_libs: ["liblog"],
     vendor: true,
-    
+}
+
 cc_library {
     name: "libbinder_shim",
     shared_libs: ["libbinder", "libutils"],
