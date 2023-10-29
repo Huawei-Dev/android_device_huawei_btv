@@ -27,6 +27,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.frameworks.cameraservice.service</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
@@ -211,6 +220,24 @@
         <interface>
             <name>IVr</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.camera.camResource</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHwCameraResourceService</name>
+            <instance>huawei.cameraresource.service</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.huawei.hardware.camera.cfgsvr</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHwCamCfgSvr</name>
+            <instance>huawei.camera.cfgsvr</instance>
         </interface>
     </hal>
     <hal format="hidl">
