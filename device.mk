@@ -185,7 +185,6 @@ PRODUCT_PACKAGES += \
     fstab.hi3650 \
     fstab.modem \
     init.charger.rc \
-    init.chip.charger.rc \
     init.hi3650.connectivity.rc \
     init.hi3650.hisi.rc \
     init.hi3650.lte.rc \
@@ -193,7 +192,6 @@ PRODUCT_PACKAGES += \
     init.hi3650.rc \
     init.hi3650.usb.rc \
     init.recovery.hi3650.rc \
-    init.services.rc \
     ueventd.hi3650.rc
 
 PRODUCT_COPY_FILES += \

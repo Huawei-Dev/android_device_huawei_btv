@@ -302,9 +302,9 @@ on post-fs
     
 on post-fs-data
     setprop sys.userdata_is_ready 1
-    start teecd
-
+    setprop init.svc.console stopped
     setprop persist.sys.kmemleak.debug 0
+    start teecd
     
     mkdir /splash2/sim 0770 root system
     mkdir /splash2/sim/offlinelogs 0770 root system

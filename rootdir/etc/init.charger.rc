@@ -1,5 +1,4 @@
 import /vendor/etc/init/hw/init.hi3650.usb.rc
-import /vendor/etc/init/hw/init.chip.charger.rc
 
 on early-init
     restorecon /postinstall
@@ -35,10 +34,10 @@ on init
     chmod 664 /sys/class/devfreq/ddrfreq/max_freq
     chown system system /sys/class/devfreq/ddrfreq/min_freq
     chmod 664 /sys/class/devfreq/ddrfreq/min_freq
-
-service ueventd /sbin/hw_ueventd
-    critical
-    seclabel u:r:ueventd:s0
+    
+on boot
+    chown system system /sys/devices/platform/ff200000.hisi_usb/plugusb
+    chmod 0660 /sys/devices/platform/ff200000.hisi_usb/plugusb
 
 service charger /vendor/bin/hw_charger -p
     override
@@ -72,3 +71,35 @@ service defaultcrypto /system/bin/vdc --wait cryptfs mountdefaultencrypted
 
 service atcmdserver  /vendor/bin/atcmdserver
     disabled
+    
+on charger
+    mount_all /vendor/etc/fstab.hi3650
+    start vold
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 807000
+    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chmod 0660 /sys/class/hw_power/charger/charge_data/iin_thermal
+    chown system system /sys/class/hw_power/charger/charge_data/iin_thermal
+    chmod 0660 /sys/class/hw_power/charger/charge_data/iin_thermal_aux
+    chown system system /sys/class/hw_power/charger/charge_data/iin_thermal_aux
+    chmod 0660 /sys/class/hw_power/charger/charge_data/limit_charging
+    chown system system /sys/class/hw_power/charger/charge_data/limit_charging
+    chown system system /sys/class/android_usb/android0/switch_request
+    chmod 0664 /sys/class/android_usb/android0/switch_request
+    
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+    write /sys/kernel/set_hmp_thresholds/enable 0
+    write /sys/kernel/hmp/up_threshold 1024
+    write /sys/kernel/hmp/down_threshold 1023
+    write /sys/class/devfreq/ddrfreq/max_freq 533000000
+    write /sys/class/devfreq/ddrfreq/min_freq 533000000
+    write /sys/class/devfreq/ddrfreq/min_freq 0
+    write /sys/class/devfreq/ddrfreq/max_freq 0
+
+    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 1333000000
+    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 1333000000
+
+    start atcmdserver
+    class_start charger
