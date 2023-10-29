@@ -233,6 +233,15 @@ PRODUCT_PACKAGES += \
     liblog_vendor
     
 PRODUCT_PACKAGES += \
+    libsensor_vendor \
+    libgui_vendor \
+    libbinder_shim \
+    libui_shim.vendor \
+    libshim_hwcam \
+    libshim_ui \
+    guivnd
+    
+PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libstdc++.vendor \
     libpcap.vendor
